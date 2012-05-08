@@ -23,6 +23,12 @@
     return self;
 }
 
+- (void)retrieveDataFor:(NSString *)_userEmail
+{
+    listaContatos = [NSArray arrayWithObjects:@"flavio", @"macoli", @"ruivo", nil];
+    [listaContatos retain];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
@@ -31,8 +37,7 @@
     lblEmail.text = [NSString stringWithFormat:@"Olá, %@", email];
     self.title = @"contatos";
     
-    listaContatos = [NSArray arrayWithObjects:@"flavio", @"macoli", @"ruivo", nil];
-    [listaContatos retain];
+    [self retrieveDataFor:email];
 }
 
 - (void)viewDidUnload
