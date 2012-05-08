@@ -8,12 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@class ViewController;
+@class LoginViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
+{
+    UINavigationController *navigationController;
+}
 
-@property (strong, nonatomic) UIWindow *window;
+@property (nonatomic, retain) UIWindow *window;
 
-@property (strong, nonatomic) ViewController *viewController;
+@property (nonatomic, retain) UINavigationController *navigationController;
 
 @end
