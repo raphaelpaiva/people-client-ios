@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MenuViewController : UIViewController
+@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
     NSString *email;
     UILabel *lblEmail;
+    NSArray *listaContatos;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *lblEmail;

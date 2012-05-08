@@ -10,7 +10,6 @@
 
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 {
-    
     UITextField *txtLogin;
 }
 

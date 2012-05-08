@@ -19,8 +19,6 @@
 {
     [super viewDidLoad];
     self.title = @"People";
-
-    txtLogin.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
