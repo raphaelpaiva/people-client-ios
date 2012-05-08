@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		832B0346155993B7006F950E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832B0344155993B7006F950E /* MenuViewController.m */; };
 		832B0347155993B7006F950E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832B0345155993B7006F950E /* MenuViewController.xib */; };
+		838DFA0C1559AA8B00833028 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838DFA0A1559AA8B00833028 /* ContactsViewController.m */; };
+		838DFA0D1559AA8B00833028 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DFA0B1559AA8B00833028 /* ContactsViewController.xib */; };
 		83AC14C015597DBC007F96EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14BF15597DBC007F96EB /* UIKit.framework */; };
 		83AC14C215597DBC007F96EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14C115597DBC007F96EB /* Foundation.framework */; };
 		83AC14C415597DBC007F96EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14C315597DBC007F96EB /* CoreGraphics.framework */; };
@@ -38,6 +40,9 @@
 		832B0343155993B7006F950E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		832B0344155993B7006F950E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		832B0345155993B7006F950E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		838DFA091559AA8B00833028 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
+		838DFA0A1559AA8B00833028 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
+		838DFA0B1559AA8B00833028 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
 		83AC14BB15597DBC007F96EB /* People.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = People.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC14BF15597DBC007F96EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83AC14C115597DBC007F96EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -86,6 +91,7 @@
 		832B033F15599369006F950E /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
+				838DFA071559AA4800833028 /* ContactsViewController */,
 				832B034215599388006F950E /* MenuViewController */,
 				832B034115599378006F950E /* LoginViewController */,
 			);
@@ -110,6 +116,16 @@
 				832B0345155993B7006F950E /* MenuViewController.xib */,
 			);
 			name = MenuViewController;
+			sourceTree = "<group>";
+		};
+		838DFA071559AA4800833028 /* ContactsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				838DFA091559AA8B00833028 /* ContactsViewController.h */,
+				838DFA0A1559AA8B00833028 /* ContactsViewController.m */,
+				838DFA0B1559AA8B00833028 /* ContactsViewController.xib */,
+			);
+			name = ContactsViewController;
 			sourceTree = "<group>";
 		};
 		83AC14B015597DBC007F96EB = {
@@ -256,6 +272,7 @@
 				83AC14CA15597DBC007F96EB /* InfoPlist.strings in Resources */,
 				83AC14D615597DBC007F96EB /* LoginViewController.xib in Resources */,
 				832B0347155993B7006F950E /* MenuViewController.xib in Resources */,
+				838DFA0D1559AA8B00833028 /* ContactsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +311,7 @@
 				83AC14D015597DBC007F96EB /* AppDelegate.m in Sources */,
 				83AC14D315597DBC007F96EB /* LoginViewController.m in Sources */,
 				832B0346155993B7006F950E /* MenuViewController.m in Sources */,
+				838DFA0C1559AA8B00833028 /* ContactsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

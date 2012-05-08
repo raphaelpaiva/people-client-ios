@@ -1,18 +1,16 @@
 //
-//  MenuViewController.m
+//  ContactsViewController.m
 //  People
 //
 //  Created by DCC UFRJ on 08/05/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "MenuViewController.h"
 #import "ContactsViewController.h"
 
-@implementation MenuViewController
-
-@synthesize lblEmail;
+@implementation ContactsViewController
 @synthesize email;
+@synthesize contacts;
 
 - (id)initWithEmail:(NSString *)_email
 {
@@ -20,37 +18,14 @@
     {
         self.email = _email;
     }
-        
+    
     return self;
 }
 
-- (void)retrieveDataFor:(NSString *)_userEmail
+- (void)retrieveDataFor:(NSString *)_email
 {
-    listaContatos = [NSArray arrayWithObjects:@"flavio", @"macoli", @"ruivo", nil];
-    [listaContatos retain];
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    lblEmail.text = [NSString stringWithFormat:@"Olá, %@", email];
-    self.title = @"contatos";
-    
-    [self retrieveDataFor:email];
-}
-
-- (void)viewDidUnload
-{   
-    [super viewDidUnload];
-
-    self.lblEmail = nil;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    contacts = [NSArray arrayWithObjects:@"contact1@provider.com", @"contact2@provider.com", @"contact2@provider.com", nil];
+    [contacts retain];
 }
 
 #pragma mark UITableViewDelegate
@@ -62,16 +37,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:email];
-    
-    [self.navigationController pushViewController:contactsViewController animated:YES];
+    NSLog(@"selecionei o: %@", [contacts objectAtIndex:indexPath.row]);
 }
 
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return listaContatos.count;
+    return contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -87,17 +60,41 @@
         tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    tableViewCell.textLabel.text = [listaContatos objectAtIndex:indexPath.row];
+    tableViewCell.textLabel.text = [contacts objectAtIndex:indexPath.row];
     
     return tableViewCell;
+}
+
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    self.title = email;
+    [self retrieveDataFor:email];
+}
+
+- (void)viewDidUnload
+{
+    [super viewDidUnload];
+    self.email = nil;
+    self.contacts = nil;
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    // Return YES for supported orientations
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
 
 - (void)dealloc
-{    
-    [lblEmail release];
-    [listaContatos release];
+{
+    [email release];
+    [contacts release];
     [super dealloc];
 }
+
 @end
