@@ -19,11 +19,23 @@
 {
     [super viewDidLoad];
     self.title = @"People";
+
+    txtLogin.delegate = self;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [textField resignFirstResponder];
+    [self login];
+    
+    return YES;
 }
 
 #pragma mark IBActions
