@@ -28,7 +28,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    lblEmail.text = email;
+    lblEmail.text = [NSString stringWithFormat:@"Olá, %@", email];
+    self.title = @"contatos";
 }
 
 - (void)viewDidUnload
