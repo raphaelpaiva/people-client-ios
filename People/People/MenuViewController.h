@@ -10,12 +10,16 @@
 
 @interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    NSString *email;
     UILabel *lblEmail;
+    UIImageView *imgBackground;
+    UITableView *tableView;
+    NSString *email;
     NSArray *listaContatos;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *lblEmail;
+@property (retain, nonatomic) IBOutlet UIImageView *imgBackground;
+@property (retain, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;

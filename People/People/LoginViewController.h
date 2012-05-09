@@ -11,9 +11,13 @@
 @interface LoginViewController : UIViewController <UITextFieldDelegate>
 {
     UITextField *txtLogin;
+    UILabel *lblLogo;
+    UIImageView *imgBackground;
 }
 
 @property (nonatomic, retain) IBOutlet UITextField *txtLogin;
+@property (retain, nonatomic) IBOutlet UILabel *lblLogo;
+@property (retain, nonatomic) IBOutlet UIImageView *imgBackground;
 
 - (IBAction)login;
 

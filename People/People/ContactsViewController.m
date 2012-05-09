@@ -75,25 +75,26 @@
     [self retrieveDataFor:email];
 }
 
-- (void)viewDidUnload
-{
-    [super viewDidUnload];
-    self.email = nil;
-    self.contacts = nil;
-}
-
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
 
+- (void)viewDidUnload
+{   
+    self.email = nil;
+    self.contacts = nil;
+    
+    [super viewDidUnload];
+}
+
 - (void)dealloc
 {
     [email release];
     [contacts release];
+    
     [super dealloc];
 }
 

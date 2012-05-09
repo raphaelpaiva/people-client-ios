@@ -12,6 +12,8 @@
 @implementation MenuViewController
 
 @synthesize lblEmail;
+@synthesize imgBackground;
+@synthesize tableView;
 @synthesize email;
 
 - (id)initWithEmail:(NSString *)_email
@@ -35,17 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    lblEmail.text = [NSString stringWithFormat:@"Olá, %@", email];
-    self.title = @"contatos";
+    
+    self.title = @"Menu";
+    lblEmail.text = [NSString stringWithFormat:@"Olá %@,", email];
+    imgBackground.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_2.png"]];
     
     [self retrieveDataFor:email];
-}
-
-- (void)viewDidUnload
-{   
-    [super viewDidUnload];
-
-    self.lblEmail = nil;
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -74,7 +71,7 @@
     return listaContatos.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *cellIdentifier = @"cellContato";
     
@@ -94,10 +91,22 @@
 
 #pragma mark -
 
+- (void)viewDidUnload
+{   
+    self.lblEmail = nil;
+    self.imgBackground = nil;
+    self.tableView = nil;
+
+    [super viewDidUnload];
+}
+
 - (void)dealloc
 {    
     [lblEmail release];
     [listaContatos release];
+    [imgBackground release];
+    [tableView release];
+    
     [super dealloc];
 }
 @end

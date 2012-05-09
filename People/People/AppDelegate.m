@@ -17,9 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    
     self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
 
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
+    
     LoginViewController *loginViewController = [[LoginViewController alloc] init];
     navigationController = [[UINavigationController alloc] initWithRootViewController:loginViewController];
     [loginViewController release];

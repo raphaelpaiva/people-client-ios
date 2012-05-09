@@ -12,13 +12,18 @@
 @implementation LoginViewController
 
 @synthesize txtLogin;
+@synthesize lblLogo;
+@synthesize imgBackground;
 
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"People";
+    
+    self.navigationItem.titleView = lblLogo;
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage imageNamed:@"bg_1.png"] forBarMetrics:UIBarMetricsDefault];
+    imgBackground.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_2.png"]];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -51,16 +56,20 @@
 
 - (void)viewDidUnload
 {
-    [super viewDidUnload];
-    
+    self.lblLogo = nil;
+    self.imgBackground = nil;
     self.txtLogin = nil;
+    
+   [super viewDidUnload];
 }
 
 - (void)dealloc
 {    
-    [super dealloc];
-    
+    [lblLogo release];
+    [imgBackground release];
     [txtLogin release];
+    
+    [super dealloc];
 }
 
 @end
