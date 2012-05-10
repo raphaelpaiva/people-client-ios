@@ -24,6 +24,8 @@
 		83AC14E015597DBC007F96EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14C115597DBC007F96EB /* Foundation.framework */; };
 		83AC14E815597DBC007F96EB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 83AC14E615597DBC007F96EB /* InfoPlist.strings */; };
 		83AC14EB15597DBD007F96EB /* PeopleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AC14EA15597DBD007F96EB /* PeopleTests.m */; };
+		83AE8A52155C372B00DB956C /* Contact.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AE8A51155C372B00DB956C /* Contact.m */; };
+		83AE8A58155C383600DB956C /* ContactTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 83AE8A57155C383600DB956C /* ContactTests.m */; };
 		83BC65BD155ABBB9005C61AB /* bg_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BC65BC155ABBB9005C61AB /* bg_1.png */; };
 		83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BC65BE155ABEC8005C61AB /* people_logo.png */; };
 		83D5571D155AC1FE0061E67D /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571C155AC1FE0061E67D /* bg_2.png */; };
@@ -66,6 +68,10 @@
 		83AC14E715597DBC007F96EB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		83AC14E915597DBD007F96EB /* PeopleTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PeopleTests.h; sourceTree = "<group>"; };
 		83AC14EA15597DBD007F96EB /* PeopleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PeopleTests.m; sourceTree = "<group>"; };
+		83AE8A50155C372B00DB956C /* Contact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contact.h; sourceTree = "<group>"; };
+		83AE8A51155C372B00DB956C /* Contact.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contact.m; sourceTree = "<group>"; };
+		83AE8A56155C383600DB956C /* ContactTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactTests.h; sourceTree = "<group>"; };
+		83AE8A57155C383600DB956C /* ContactTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactTests.m; sourceTree = "<group>"; };
 		83BC65BC155ABBB9005C61AB /* bg_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_1.png; sourceTree = "<group>"; };
 		83BC65BE155ABEC8005C61AB /* people_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people_logo.png; sourceTree = "<group>"; };
 		83D5571C155AC1FE0061E67D /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_2.png; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			children = (
 				83AC14CE15597DBC007F96EB /* AppDelegate.h */,
 				83AC14CF15597DBC007F96EB /* AppDelegate.m */,
+				83AE8A4F155C343C00DB956C /* Model */,
 				832B033F15599369006F950E /* UIViewController */,
 				83AC14C615597DBC007F96EB /* Supporting Files */,
 			);
@@ -194,6 +201,8 @@
 			children = (
 				83AC14E915597DBD007F96EB /* PeopleTests.h */,
 				83AC14EA15597DBD007F96EB /* PeopleTests.m */,
+				83AE8A56155C383600DB956C /* ContactTests.h */,
+				83AE8A57155C383600DB956C /* ContactTests.m */,
 				83AC14E415597DBC007F96EB /* Supporting Files */,
 			);
 			path = PeopleTests;
@@ -206,6 +215,15 @@
 				83AC14E615597DBC007F96EB /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		83AE8A4F155C343C00DB956C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83AE8A50155C372B00DB956C /* Contact.h */,
+				83AE8A51155C372B00DB956C /* Contact.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 		83BC65B8155AB970005C61AB /* Images */ = {
@@ -336,6 +354,7 @@
 				83AC14D315597DBC007F96EB /* LoginViewController.m in Sources */,
 				832B0346155993B7006F950E /* MenuViewController.m in Sources */,
 				838DFA0C1559AA8B00833028 /* ContactsViewController.m in Sources */,
+				83AE8A52155C372B00DB956C /* Contact.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83AC14EB15597DBD007F96EB /* PeopleTests.m in Sources */,
+				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
