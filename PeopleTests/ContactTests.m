@@ -24,7 +24,7 @@
 - (void)testClassExists 
 {
     id object = NSClassFromString(@"Contact");
-    STAssertNotNil(object, @"Class Contact doesn't exists!");
+    STAssertNotNil(object, @"The Class Contact doesn't exists!");
 }
 
 @end
