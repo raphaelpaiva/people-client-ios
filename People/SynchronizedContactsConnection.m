@@ -17,18 +17,16 @@
     return [NSString stringWithFormat:@"localhost:8000/api/sincronizar/%@", email];
 }
 
-- (BOOL)start:(NSError **)error
+- (void)start:(NSError **)error
 {
     if (email == nil)
     {
         NSMutableDictionary *details = [NSMutableDictionary dictionary];
-        [details setValue:@"Email paramete should not be nil!" forKey:NSLocalizedDescriptionKey];
-        *error = [NSError errorWithDomain:@"ConnectionError" code:200 userInfo:details];
-        
-        return NO;
+        [details setValue:@"Email parameter should not be nil!" forKey:NSLocalizedDescriptionKey];
+        *error = [NSError errorWithDomain:@"ConnectionError" code:201 userInfo:details];
     }
+
     
-    return YES;
 }
 
 #pragma mark -

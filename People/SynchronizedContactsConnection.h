@@ -17,6 +17,6 @@
 @property (nonatomic, readonly) NSString *url;
 @property (nonatomic, copy) NSString *email;
 
-- (BOOL)start:(NSError **)error;
+- (void)start:(NSError **)error;
 
 @end
