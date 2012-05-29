@@ -10,11 +10,11 @@
 //  See Also: http://developer.apple.com/iphone/library/documentation/Xcode/Conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "SynchronizedContactsConnection.h"
+#import "DownloadAgendaConnection.h"
 
-@interface SynchronizedContactsConnectionTests : SenTestCase
+@interface DownloadAgendaConnectionTests : SenTestCase
 {
-    SynchronizedContactsConnection *connection;
+    DownloadAgendaConnection *connection;
 }
 
 @end

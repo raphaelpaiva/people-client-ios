@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SynchronizedContactsConnection : NSObject
+@interface DownloadAgendaConnection : NSObject
 {
     NSString *url;
     NSString *email;
@@ -17,6 +17,6 @@
 @property (nonatomic, readonly) NSString *url;
 @property (nonatomic, copy) NSString *email;
 
-- (void)start:(NSError **)error;
+- (void)start;
 
 @end

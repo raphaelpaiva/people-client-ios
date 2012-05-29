@@ -21,8 +21,9 @@
 		838E2F2B155C4F4C008C0C45 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F1F155C4F4C008C0C45 /* AFURLConnectionOperation.m */; };
 		838E2F2C155C4F4C008C0C45 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F21155C4F4C008C0C45 /* AFXMLRequestOperation.m */; };
 		838E2F2D155C4F4C008C0C45 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F23155C4F4C008C0C45 /* UIImageView+AFNetworking.m */; };
-		838E2F30155C5140008C0C45 /* SynchronizedContactsConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F2F155C5140008C0C45 /* SynchronizedContactsConnectionTests.m */; };
-		838E2F34155C5220008C0C45 /* SynchronizedContactsConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F33155C5220008C0C45 /* SynchronizedContactsConnection.m */; };
+		838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */; };
+		838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */; };
+		83AB35FC1575433F0061B032 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AB35F41575433F0061B032 /* libOCMock.a */; };
 		83AC14C015597DBC007F96EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14BF15597DBC007F96EB /* UIKit.framework */; };
 		83AC14C215597DBC007F96EB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14C115597DBC007F96EB /* Foundation.framework */; };
 		83AC14C415597DBC007F96EB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14C315597DBC007F96EB /* CoreGraphics.framework */; };
@@ -82,10 +83,17 @@
 		838E2F21155C4F4C008C0C45 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		838E2F22155C4F4C008C0C45 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		838E2F23155C4F4C008C0C45 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		838E2F2E155C5140008C0C45 /* SynchronizedContactsConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizedContactsConnectionTests.h; sourceTree = "<group>"; };
-		838E2F2F155C5140008C0C45 /* SynchronizedContactsConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizedContactsConnectionTests.m; sourceTree = "<group>"; };
-		838E2F32155C5220008C0C45 /* SynchronizedContactsConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SynchronizedContactsConnection.h; sourceTree = "<group>"; };
-		838E2F33155C5220008C0C45 /* SynchronizedContactsConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SynchronizedContactsConnection.m; sourceTree = "<group>"; };
+		838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnectionTests.h; sourceTree = "<group>"; };
+		838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnectionTests.m; sourceTree = "<group>"; };
+		838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnection.h; sourceTree = "<group>"; };
+		838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnection.m; sourceTree = "<group>"; };
+		83AB35F41575433F0061B032 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		83AB35F61575433F0061B032 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		83AB35F71575433F0061B032 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		83AB35F81575433F0061B032 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		83AB35F91575433F0061B032 /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		83AB35FA1575433F0061B032 /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		83AB35FB1575433F0061B032 /* OCMockRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockRecorder.h; sourceTree = "<group>"; };
 		83AC14BB15597DBC007F96EB /* People.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = People.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83AC14BF15597DBC007F96EB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		83AC14C115597DBC007F96EB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -133,6 +141,7 @@
 				83AC14DE15597DBC007F96EB /* SenTestingKit.framework in Frameworks */,
 				83AC14DF15597DBC007F96EB /* UIKit.framework in Frameworks */,
 				83AC14E015597DBC007F96EB /* Foundation.framework in Frameworks */,
+				83AB35FC1575433F0061B032 /* libOCMock.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -218,10 +227,23 @@
 		838E2F31155C51DF008C0C45 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				838E2F32155C5220008C0C45 /* SynchronizedContactsConnection.h */,
-				838E2F33155C5220008C0C45 /* SynchronizedContactsConnection.m */,
+				838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */,
+				838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */,
 			);
 			name = Connection;
+			sourceTree = "<group>";
+		};
+		83AB35F51575433F0061B032 /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				83AB35F61575433F0061B032 /* NSNotificationCenter+OCMAdditions.h */,
+				83AB35F71575433F0061B032 /* OCMArg.h */,
+				83AB35F81575433F0061B032 /* OCMConstraint.h */,
+				83AB35F91575433F0061B032 /* OCMock.h */,
+				83AB35FA1575433F0061B032 /* OCMockObject.h */,
+				83AB35FB1575433F0061B032 /* OCMockRecorder.h */,
+			);
+			path = OCMock;
 			sourceTree = "<group>";
 		};
 		83AC14B015597DBC007F96EB = {
@@ -283,13 +305,15 @@
 		83AC14E315597DBC007F96EB /* PeopleTests */ = {
 			isa = PBXGroup;
 			children = (
+				83AB35F41575433F0061B032 /* libOCMock.a */,
+				83AB35F51575433F0061B032 /* OCMock */,
 				83AC14E415597DBC007F96EB /* Supporting Files */,
 				83AC14E915597DBD007F96EB /* PeopleTests.h */,
 				83AC14EA15597DBD007F96EB /* PeopleTests.m */,
 				83AE8A56155C383600DB956C /* ContactTests.h */,
 				83AE8A57155C383600DB956C /* ContactTests.m */,
-				838E2F2E155C5140008C0C45 /* SynchronizedContactsConnectionTests.h */,
-				838E2F2F155C5140008C0C45 /* SynchronizedContactsConnectionTests.m */,
+				838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */,
+				838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */,
 			);
 			path = PeopleTests;
 			sourceTree = "<group>";
@@ -451,7 +475,7 @@
 				838E2F2B155C4F4C008C0C45 /* AFURLConnectionOperation.m in Sources */,
 				838E2F2C155C4F4C008C0C45 /* AFXMLRequestOperation.m in Sources */,
 				838E2F2D155C4F4C008C0C45 /* UIImageView+AFNetworking.m in Sources */,
-				838E2F34155C5220008C0C45 /* SynchronizedContactsConnection.m in Sources */,
+				838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -461,7 +485,7 @@
 			files = (
 				83AC14EB15597DBD007F96EB /* PeopleTests.m in Sources */,
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
-				838E2F30155C5140008C0C45 /* SynchronizedContactsConnectionTests.m in Sources */,
+				838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,7 +602,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "People/People-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PeopleTests\"/**";
 				INFOPLIST_FILE = "PeopleTests/PeopleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PeopleTests\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
@@ -595,7 +625,13 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "People/People-Prefix.pch";
+				HEADER_SEARCH_PATHS = "\"$(SRCROOT)/PeopleTests\"/**";
 				INFOPLIST_FILE = "PeopleTests/PeopleTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/PeopleTests\"",
+				);
+				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
