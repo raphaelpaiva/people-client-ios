@@ -7,19 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DownloadAgendaConnection.h"
 
-@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, ConnectionDelegate>
 {
     UILabel *lblEmail;
     UIImageView *imgBackground;
     UITableView *tableView;
     NSString *email;
-    NSArray *listaContatos;
+    NSMutableArray *contactList;
+    
+    DownloadAgendaConnection *connection;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *lblEmail;
 @property (retain, nonatomic) IBOutlet UIImageView *imgBackground;
 @property (retain, nonatomic) IBOutlet UITableView *tableView;
+@property (retain, nonatomic) IBOutlet UITextField *txtEmailDownloadContact;
+@property (retain, nonatomic) IBOutlet UIButton *btnDownloadContacts;
+@property (retain, nonatomic) IBOutlet UIButton *btnUploadContacts;
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;

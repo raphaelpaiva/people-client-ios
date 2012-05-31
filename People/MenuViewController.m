@@ -8,12 +8,16 @@
 
 #import "MenuViewController.h"
 #import "ContactsViewController.h"
+#import "DownloadAgendaConnection.h"
 
 @implementation MenuViewController
 
 @synthesize lblEmail;
 @synthesize imgBackground;
 @synthesize tableView;
+@synthesize txtEmailDownloadContact;
+@synthesize btnDownloadContacts;
+@synthesize btnUploadContacts;
 @synthesize email;
 
 - (id)initWithEmail:(NSString *)_email
@@ -28,15 +32,25 @@
 
 - (void)retrieveDataFor:(NSString *)_userEmail
 {
-    listaContatos = [NSArray arrayWithObjects:@"flavio", @"macoli", @"ruivo", nil];
-    [listaContatos retain];
+    contactList = [[NSMutableArray alloc] init];
 }
 
 #pragma mark IBActions
 
 - (IBAction)onClickDownloadContacts
-{
-    
+{    
+    [UIView animateWithDuration:0.5 animations:^
+    {
+        int animationSize = 40;
+        
+        txtEmailDownloadContact.frame = CGRectMake(txtEmailDownloadContact.frame.origin.x, txtEmailDownloadContact.frame.origin.y + animationSize, txtEmailDownloadContact.frame.size.width, txtEmailDownloadContact.frame.size.height);
+        
+        btnUploadContacts.frame = CGRectMake(btnUploadContacts.frame.origin.x, btnUploadContacts.frame.origin.y + animationSize, btnUploadContacts.frame.size.width, btnUploadContacts.frame.size.height);
+        
+        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y + animationSize, tableView.frame.size.width, tableView.frame.size.height - animationSize);
+        
+        [txtEmailDownloadContact becomeFirstResponder];
+    }];
 }
 
 - (IBAction)onClickUploadContacts
@@ -44,6 +58,42 @@
     
 }
 
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if (textField.text.length != 0)
+    {
+        connection = [[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self];
+        [connection startConnection];
+        
+        [textField resignFirstResponder];
+        
+        return YES;
+    }
+    
+    return NO;
+}
+
+#pragma mark ConnectionDelegate
+
+- (void)connectionSuccessful:(DownloadAgendaConnection *)_connection 
+{
+    if ([_connection.response isKindOfClass:[NSArray class]])
+    {
+        [listaContatos addObject:txtEmailDownloadContact.text];
+        [tableView reloadData];
+        
+//        NSArray *contatos = (NSArray *)_connection.response;
+        
+        
+    }
+}
+
+- (void)connectionFail:(DownloadAgendaConnection *)connection 
+{
+    
+}
 
 #pragma mark - View lifecycle
 
@@ -81,7 +131,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return listaContatos.count;
+    return contactList.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -97,7 +147,7 @@
         tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    tableViewCell.textLabel.text = [listaContatos objectAtIndex:indexPath.row];
+    tableViewCell.textLabel.text = [contactList objectAtIndex:indexPath.row];
     
     return tableViewCell;
 }
@@ -109,16 +159,23 @@
     self.lblEmail = nil;
     self.imgBackground = nil;
     self.tableView = nil;
-
+    self.txtEmailDownloadContact = nil;
+    self.btnUploadContacts = nil;
+    self.btnDownloadContacts = nil;
+    
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {    
     [lblEmail release];
-    [listaContatos release];
+    [contactList release];
     [imgBackground release];
     [tableView release];
+    [connection release];
+    [txtEmailDownloadContact release];
+    [btnDownloadContacts release];
+    [btnUploadContacts release];
     
     [super dealloc];
 }
