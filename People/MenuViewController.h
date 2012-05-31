@@ -23,5 +23,7 @@
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;
+- (IBAction)onClickDownloadContacts;
+- (IBAction)onClickUploadContacts;
 
 @end

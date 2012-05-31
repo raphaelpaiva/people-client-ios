@@ -32,6 +32,19 @@
     [listaContatos retain];
 }
 
+#pragma mark IBActions
+
+- (IBAction)onClickDownloadContacts
+{
+    
+}
+
+- (IBAction)onClickUploadContacts
+{
+    
+}
+
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad

@@ -7,16 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AFNetworking.h"
 
 @interface DownloadAgendaConnection : NSObject
 {
     NSString *url;
     NSString *email;
+    
+    AFJSONRequestOperation *jsonRequest;
 }
 
 @property (nonatomic, readonly) NSString *url;
 @property (nonatomic, copy) NSString *email;
+@property (nonatomic, retain) AFJSONRequestOperation *jsonRequest;
 
-- (void)start;
+- (id)initWithEmail:(NSString *)email;
+- (void)startConnection;
 
 @end

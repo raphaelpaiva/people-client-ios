@@ -87,7 +87,7 @@
 		838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnectionTests.m; sourceTree = "<group>"; };
 		838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnection.h; sourceTree = "<group>"; };
 		838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnection.m; sourceTree = "<group>"; };
-		83AB35F41575433F0061B032 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = "<group>"; };
+		83AB35F41575433F0061B032 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../libOCMock.a; sourceTree = "<group>"; };
 		83AB35F61575433F0061B032 /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		83AB35F71575433F0061B032 /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
 		83AB35F81575433F0061B032 /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
@@ -236,6 +236,7 @@
 		83AB35F51575433F0061B032 /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
+				83AB35F41575433F0061B032 /* libOCMock.a */,
 				83AB35F61575433F0061B032 /* NSNotificationCenter+OCMAdditions.h */,
 				83AB35F71575433F0061B032 /* OCMArg.h */,
 				83AB35F81575433F0061B032 /* OCMConstraint.h */,
@@ -305,7 +306,6 @@
 		83AC14E315597DBC007F96EB /* PeopleTests */ = {
 			isa = PBXGroup;
 			children = (
-				83AB35F41575433F0061B032 /* libOCMock.a */,
 				83AB35F51575433F0061B032 /* OCMock */,
 				83AC14E415597DBC007F96EB /* Supporting Files */,
 				83AC14E915597DBD007F96EB /* PeopleTests.h */,
