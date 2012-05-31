@@ -10,6 +10,12 @@
 #import "ContactsViewController.h"
 #import "DownloadAgendaConnection.h"
 
+@interface MenuViewController (Private) 
+
+- (void)shouldShowContactTextField:(BOOL)animate;
+
+@end
+
 @implementation MenuViewController
 
 @synthesize lblEmail;
@@ -19,6 +25,7 @@
 @synthesize btnDownloadContacts;
 @synthesize btnUploadContacts;
 @synthesize email;
+@synthesize connection;
 
 - (id)initWithEmail:(NSString *)_email
 {
@@ -39,23 +46,43 @@
 
 - (IBAction)onClickDownloadContacts
 {    
-    [UIView animateWithDuration:0.5 animations:^
-    {
-        int animationSize = 40;
-        
-        txtEmailDownloadContact.frame = CGRectMake(txtEmailDownloadContact.frame.origin.x, txtEmailDownloadContact.frame.origin.y + animationSize, txtEmailDownloadContact.frame.size.width, txtEmailDownloadContact.frame.size.height);
-        
-        btnUploadContacts.frame = CGRectMake(btnUploadContacts.frame.origin.x, btnUploadContacts.frame.origin.y + animationSize, btnUploadContacts.frame.size.width, btnUploadContacts.frame.size.height);
-        
-        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y + animationSize, tableView.frame.size.width, tableView.frame.size.height - animationSize);
-        
-        [txtEmailDownloadContact becomeFirstResponder];
-    }];
+    if (btnDownloadContacts.tag == 0)
+        btnDownloadContacts.tag = 1;
+    else
+        btnDownloadContacts.tag = 0;
+
+    [self shouldShowContactTextField:btnDownloadContacts.tag];
 }
 
 - (IBAction)onClickUploadContacts
 {
     
+}
+
+#pragma mark private
+
+- (void)shouldShowContactTextField:(BOOL)animate 
+{
+    [UIView animateWithDuration:0.5 animations:^
+    {
+        int animationSize = 40;
+
+        if (!animate)
+        {
+            animationSize = -animationSize;
+            [txtEmailDownloadContact resignFirstResponder];
+        } else
+        {
+            [txtEmailDownloadContact becomeFirstResponder];
+        }
+
+        txtEmailDownloadContact.frame = CGRectMake(txtEmailDownloadContact.frame.origin.x, txtEmailDownloadContact.frame.origin.y + animationSize, txtEmailDownloadContact.frame.size.width, txtEmailDownloadContact.frame.size.height);
+
+        btnUploadContacts.frame = CGRectMake(btnUploadContacts.frame.origin.x, btnUploadContacts.frame.origin.y + animationSize, btnUploadContacts.frame.size.width, btnUploadContacts.frame.size.height);
+
+        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y + animationSize, tableView.frame.size.width, tableView.frame.size.height - animationSize);
+        
+    }];
 }
 
 #pragma mark UITextFieldDelegate
@@ -64,10 +91,13 @@
 {
     if (textField.text.length != 0)
     {
-        connection = [[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self];
+        self.connection = [[[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self] autorelease];
         [connection startConnection];
         
         [textField resignFirstResponder];
+        
+        [self shouldShowContactTextField:NO];
+        btnDownloadContacts.tag = 0;
         
         return YES;
     }
@@ -81,11 +111,11 @@
 {
     if ([_connection.response isKindOfClass:[NSArray class]])
     {
-        [listaContatos addObject:txtEmailDownloadContact.text];
+        NSArray *contatos = (NSArray *)_connection.response;
+        
+        NSDictionary *dicUser = [NSDictionary dictionaryWithObjectsAndKeys:contatos, txtEmailDownloadContact.text, nil];
+        [contactList addObject:dicUser];
         [tableView reloadData];
-        
-//        NSArray *contatos = (NSArray *)_connection.response;
-        
         
     }
 }
@@ -122,7 +152,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:email];
+    NSDictionary *userDic = (NSDictionary *)[contactList objectAtIndex:indexPath.row];
+    NSString *_email = [[userDic allKeys] lastObject];
+    NSArray *contacts = [[userDic allValues] lastObject];
+    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:_email andContacts:contacts];
     
     [self.navigationController pushViewController:contactsViewController animated:YES];
 }
@@ -147,7 +180,8 @@
         tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    tableViewCell.textLabel.text = [contactList objectAtIndex:indexPath.row];
+    NSDictionary *contactDic = [contactList objectAtIndex:indexPath.row];
+    tableViewCell.textLabel.text = [[contactDic allKeys] lastObject];
     
     return tableViewCell;
 }

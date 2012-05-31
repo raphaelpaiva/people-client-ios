@@ -26,6 +26,7 @@
 @property (retain, nonatomic) IBOutlet UITextField *txtEmailDownloadContact;
 @property (retain, nonatomic) IBOutlet UIButton *btnDownloadContacts;
 @property (retain, nonatomic) IBOutlet UIButton *btnUploadContacts;
+@property (nonatomic, retain) DownloadAgendaConnection *connection;
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;

@@ -12,11 +12,12 @@
 @synthesize email;
 @synthesize contacts;
 
-- (id)initWithEmail:(NSString *)_email
+- (id)initWithEmail:(NSString *)_email andContacts:(NSArray *)_contacts
 {
     if (self = [super init])
     {
         self.email = _email;
+        self.contacts = _contacts;
     }
     
     return self;
