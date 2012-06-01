@@ -47,6 +47,7 @@
 		D9E8F14A157900B4002F8DF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E8F149157900B4002F8DF9 /* QuartzCore.framework */; };
 		D9E8F161157906CC002F8DF9 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */; };
 		D9E8F162157906CC002F8DF9 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */; };
+		D9E8F16715790BFE002F8DF9 /* UploadAgendaConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F16615790BFE002F8DF9 /* UploadAgendaConnection.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +65,7 @@
 		832B0343155993B7006F950E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		832B0344155993B7006F950E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		832B0345155993B7006F950E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		838DFA091559AA8B00833028 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AgendaViewController.h; sourceTree = "<group>"; };
+		838DFA091559AA8B00833028 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaViewController.h; sourceTree = "<group>"; };
 		838DFA0A1559AA8B00833028 /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
 		838DFA0B1559AA8B00833028 /* AgendaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaViewController.xib; sourceTree = "<group>"; };
 		838E2F0F155C4F4C008C0C45 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
@@ -132,6 +133,8 @@
 		D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		D9E8F15F157906CC002F8DF9 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		D9E8F16515790BFE002F8DF9 /* UploadAgendaConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UploadAgendaConnection.h; sourceTree = "<group>"; };
+		D9E8F16615790BFE002F8DF9 /* UploadAgendaConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UploadAgendaConnection.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,8 +243,8 @@
 		838E2F31155C51DF008C0C45 /* Connection */ = {
 			isa = PBXGroup;
 			children = (
-				838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */,
-				838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */,
+				D9E8F16415790BEA002F8DF9 /* UploadAgendaConnection */,
+				D9E8F16315790BDD002F8DF9 /* DownloadAgendaConnection */,
 				832181221577D5FE001C3ED3 /* ConnectionDelegate.h */,
 			);
 			name = Connection;
@@ -372,6 +375,24 @@
 				D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */,
 			);
 			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
+		D9E8F16315790BDD002F8DF9 /* DownloadAgendaConnection */ = {
+			isa = PBXGroup;
+			children = (
+				838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */,
+				838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */,
+			);
+			name = DownloadAgendaConnection;
+			sourceTree = "<group>";
+		};
+		D9E8F16415790BEA002F8DF9 /* UploadAgendaConnection */ = {
+			isa = PBXGroup;
+			children = (
+				D9E8F16515790BFE002F8DF9 /* UploadAgendaConnection.h */,
+				D9E8F16615790BFE002F8DF9 /* UploadAgendaConnection.m */,
+			);
+			name = UploadAgendaConnection;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -506,6 +527,7 @@
 				838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */,
 				D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */,
 				D9E8F162157906CC002F8DF9 /* SVProgressHUD.m in Sources */,
+				D9E8F16715790BFE002F8DF9 /* UploadAgendaConnection.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

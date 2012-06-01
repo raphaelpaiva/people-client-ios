@@ -8,7 +8,6 @@
 
 #import "MenuViewController.h"
 #import "AgendaViewController.h"
-#import "DownloadAgendaConnection.h"
 #import "Agenda.h"
 #import "SVProgressHUD.h"
 
@@ -27,7 +26,8 @@
 @synthesize btnDownloadContacts;
 @synthesize btnUploadContacts;
 @synthesize email;
-@synthesize connection;
+@synthesize downloadAgendaConnection;
+@synthesize uploadAgendaConnection;
 
 - (id)initWithEmail:(NSString *)_email
 {
@@ -68,7 +68,10 @@
 
 - (IBAction)onClickUploadAgenda
 {
+    UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"People" message:@"Você tem certeza que deseja disponibilizar os seus contatos?" delegate:self cancelButtonTitle:@"Não" otherButtonTitles:@"Sim", nil];
     
+    [alertView show];
+    [alertView release];
 }
 
 #pragma mark private
@@ -96,6 +99,17 @@
     }];
 }
 
+#pragma mark UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1)
+    {
+        self.uploadAgendaConnection = [[UploadAgendaConnection alloc] initWithEmail:self.email];
+        [uploadAgendaConnection startConnection];
+    }
+}
+
 #pragma mark UITextFieldDelegate
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -104,8 +118,8 @@
     {
         [SVProgressHUD showWithStatus:@"Carregando..." maskType:SVProgressHUDMaskTypeGradient];
         
-        self.connection = [[[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self] autorelease];
-        [connection startConnection];
+        self.downloadAgendaConnection = [[[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self] autorelease];
+        [downloadAgendaConnection startConnection];
         
         textField.text = @"";
         [textField resignFirstResponder];
@@ -206,7 +220,8 @@
     [agendas release];
     [imgBackground release];
     [tableView release];
-    [connection release];
+    [downloadAgendaConnection release];
+    [uploadAgendaConnection release];
     [txtEmailDownloadContact release];
     [btnDownloadContacts release];
     [btnUploadContacts release];

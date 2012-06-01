@@ -19,7 +19,6 @@
 @implementation DownloadAgendaConnection
 
 @synthesize email;
-@synthesize jsonRequest;
 @synthesize delegate;
 @synthesize response;
 
@@ -43,7 +42,7 @@
 
 - (void)startConnection
 {
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self url]]];
+    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.url]];
     
     jsonRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
                    success:^(NSURLRequest *request, NSHTTPURLResponse *response, id json)

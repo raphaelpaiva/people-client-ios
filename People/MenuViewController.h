@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "DownloadAgendaConnection.h"
+#import "UploadAgendaConnection.h"
 
-@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, ConnectionDelegate>
+@interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIAlertViewDelegate, ConnectionDelegate>
 {
     BOOL emailTextFieldHidden;
     
@@ -19,7 +20,8 @@
     NSString *email;
     NSMutableArray *agendas;
     
-    DownloadAgendaConnection *connection;
+    DownloadAgendaConnection *downloadAgendaConnection;
+    UploadAgendaConnection *uploadAgendaConnection;
 }
 
 @property (retain, nonatomic) IBOutlet UILabel *lblEmail;
@@ -28,7 +30,8 @@
 @property (retain, nonatomic) IBOutlet UITextField *txtEmailDownloadContact;
 @property (retain, nonatomic) IBOutlet UIButton *btnDownloadContacts;
 @property (retain, nonatomic) IBOutlet UIButton *btnUploadContacts;
-@property (nonatomic, retain) DownloadAgendaConnection *connection;
+@property (nonatomic, retain) DownloadAgendaConnection *downloadAgendaConnection;
+@property (nonatomic, retain) UploadAgendaConnection *uploadAgendaConnection;
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;

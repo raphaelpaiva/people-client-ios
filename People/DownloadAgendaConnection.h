@@ -24,7 +24,6 @@
 @property (nonatomic, readonly) NSString *url;
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, retain) NSObject *response;
-@property (nonatomic, retain) AFJSONRequestOperation *jsonRequest;
 @property (nonatomic, assign) id <ConnectionDelegate> delegate;
 
 - (id)initWithEmail:(NSString *)email andDelegate:(id<ConnectionDelegate>)delegate;
