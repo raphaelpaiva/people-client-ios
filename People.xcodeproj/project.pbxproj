@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		832B0346155993B7006F950E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832B0344155993B7006F950E /* MenuViewController.m */; };
 		832B0347155993B7006F950E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832B0345155993B7006F950E /* MenuViewController.xib */; };
-		838DFA0C1559AA8B00833028 /* ContactsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838DFA0A1559AA8B00833028 /* ContactsViewController.m */; };
-		838DFA0D1559AA8B00833028 /* ContactsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DFA0B1559AA8B00833028 /* ContactsViewController.xib */; };
+		838DFA0C1559AA8B00833028 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838DFA0A1559AA8B00833028 /* AgendaViewController.m */; };
+		838DFA0D1559AA8B00833028 /* AgendaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DFA0B1559AA8B00833028 /* AgendaViewController.xib */; };
 		838E2F24155C4F4C008C0C45 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F10155C4F4C008C0C45 /* AFHTTPClient.m */; };
 		838E2F25155C4F4C008C0C45 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F12155C4F4C008C0C45 /* AFHTTPRequestOperation.m */; };
 		838E2F26155C4F4C008C0C45 /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F14155C4F4C008C0C45 /* AFImageRequestOperation.m */; };
@@ -64,9 +64,9 @@
 		832B0343155993B7006F950E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		832B0344155993B7006F950E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		832B0345155993B7006F950E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
-		838DFA091559AA8B00833028 /* ContactsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactsViewController.h; sourceTree = "<group>"; };
-		838DFA0A1559AA8B00833028 /* ContactsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactsViewController.m; sourceTree = "<group>"; };
-		838DFA0B1559AA8B00833028 /* ContactsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactsViewController.xib; sourceTree = "<group>"; };
+		838DFA091559AA8B00833028 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; path = AgendaViewController.h; sourceTree = "<group>"; };
+		838DFA0A1559AA8B00833028 /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
+		838DFA0B1559AA8B00833028 /* AgendaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaViewController.xib; sourceTree = "<group>"; };
 		838E2F0F155C4F4C008C0C45 /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		838E2F10155C4F4C008C0C45 /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		838E2F11155C4F4C008C0C45 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -193,9 +193,9 @@
 		838DFA071559AA4800833028 /* ContactsViewController */ = {
 			isa = PBXGroup;
 			children = (
-				838DFA091559AA8B00833028 /* ContactsViewController.h */,
-				838DFA0A1559AA8B00833028 /* ContactsViewController.m */,
-				838DFA0B1559AA8B00833028 /* ContactsViewController.xib */,
+				838DFA091559AA8B00833028 /* AgendaViewController.h */,
+				838DFA0A1559AA8B00833028 /* AgendaViewController.m */,
+				838DFA0B1559AA8B00833028 /* AgendaViewController.xib */,
 			);
 			name = ContactsViewController;
 			sourceTree = "<group>";
@@ -447,7 +447,7 @@
 				83AC14CA15597DBC007F96EB /* InfoPlist.strings in Resources */,
 				83AC14D615597DBC007F96EB /* LoginViewController.xib in Resources */,
 				832B0347155993B7006F950E /* MenuViewController.xib in Resources */,
-				838DFA0D1559AA8B00833028 /* ContactsViewController.xib in Resources */,
+				838DFA0D1559AA8B00833028 /* AgendaViewController.xib in Resources */,
 				83BC65BD155ABBB9005C61AB /* bg_1.png in Resources */,
 				83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */,
 				83D5571D155AC1FE0061E67D /* bg_2.png in Resources */,
@@ -491,7 +491,7 @@
 				83AC14D015597DBC007F96EB /* AppDelegate.m in Sources */,
 				83AC14D315597DBC007F96EB /* LoginViewController.m in Sources */,
 				832B0346155993B7006F950E /* MenuViewController.m in Sources */,
-				838DFA0C1559AA8B00833028 /* ContactsViewController.m in Sources */,
+				838DFA0C1559AA8B00833028 /* AgendaViewController.m in Sources */,
 				83AE8A52155C372B00DB956C /* Contact.m in Sources */,
 				838E2F24155C4F4C008C0C45 /* AFHTTPClient.m in Sources */,
 				838E2F25155C4F4C008C0C45 /* AFHTTPRequestOperation.m in Sources */,

@@ -6,27 +6,33 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
-#import "ContactsViewController.h"
+#import "AgendaViewController.h"
+#import "Contact.h"
 
-@implementation ContactsViewController
-@synthesize email;
-@synthesize contacts;
+@implementation AgendaViewController
 
-- (id)initWithEmail:(NSString *)_email andContacts:(NSArray *)_contacts
+@synthesize agenda;
+
+- (id)initWithAgenda:(Agenda *)_agenda
 {
     if (self = [super init])
     {
-        self.email = _email;
-        self.contacts = _contacts;
+        self.agenda = _agenda;
     }
     
     return self;
 }
 
-- (void)retrieveDataFor:(NSString *)_email
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
 {
-    contacts = [NSArray arrayWithObjects:@"contact1@provider.com", @"contact2@provider.com", @"contact2@provider.com", nil];
-    [contacts retain];
+    [super viewDidLoad];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark UITableViewDelegate
@@ -38,14 +44,14 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"selecionei o: %@", [contacts objectAtIndex:indexPath.row]);
+    
 }
 
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return contacts.count;
+    return agenda.contacts.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -56,45 +62,29 @@
     
     if (tableViewCell == nil) {
         
-        tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-        tableViewCell.selectionStyle = UITableViewCellSelectionStyleGray;
-        tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier] autorelease];
+        tableViewCell.selectionStyle = UITableViewCellSelectionStyleBlue;
     }
     
-    tableViewCell.textLabel.text = [contacts objectAtIndex:indexPath.row];
+    Contact *contact = [agenda.contacts objectAtIndex:indexPath.row];
+    tableViewCell.textLabel.text = contact.name;
+    tableViewCell.detailTextLabel.text = contact.telephone;
     
     return tableViewCell;
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.title = email;
-    [self retrieveDataFor:email];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark -
 
 - (void)viewDidUnload
 {   
-    self.email = nil;
-    self.contacts = nil;
+    self.agenda = nil;
     
     [super viewDidUnload];
 }
 
 - (void)dealloc
 {
-    [email release];
-    [contacts release];
+    [agenda release];
     
     [super dealloc];
 }

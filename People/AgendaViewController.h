@@ -7,16 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Agenda.h"
 
-@interface ContactsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface AgendaViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 {
-    NSString *email;
-    NSArray *contacts;
+    Agenda *agenda;
 }
 
-@property (nonatomic, copy) NSString *email;
-@property (nonatomic, retain) NSArray *contacts;
+@property (nonatomic, retain) Agenda *agenda;
 
-- (id)initWithEmail:(NSString *)email andContacts:(NSArray *)contacts;
+- (id)initWithAgenda:(Agenda *)agenda;
 
 @end

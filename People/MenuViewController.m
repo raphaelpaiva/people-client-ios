@@ -7,7 +7,7 @@
 //
 
 #import "MenuViewController.h"
-#import "ContactsViewController.h"
+#import "AgendaViewController.h"
 #import "DownloadAgendaConnection.h"
 #import "Agenda.h"
 #import "SVProgressHUD.h"
@@ -152,7 +152,7 @@
 {
     Agenda *agenda = [agendas objectAtIndex:indexPath.row];
     
-    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:agenda.email andContacts:agenda.contacts];
+    AgendaViewController *contactsViewController = [[AgendaViewController alloc] initWithAgenda:agenda];
     
     [self.navigationController pushViewController:contactsViewController animated:YES];
     
@@ -175,7 +175,7 @@
     if (tableViewCell == nil) {
         
         tableViewCell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier] autorelease];
-        tableViewCell.selectionStyle = UITableViewCellSelectionStyleGray;
+        tableViewCell.selectionStyle = UITableViewCellSelectionStyleNone;
         tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
