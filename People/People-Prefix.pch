@@ -11,4 +11,6 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+    #define PAGE_NOT_FOUND_404 -1011
 #endif

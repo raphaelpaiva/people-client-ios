@@ -44,6 +44,9 @@
 		83D5571D155AC1FE0061E67D /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571C155AC1FE0061E67D /* bg_2.png */; };
 		83D5571F155AC6F80061E67D /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571E155AC6F80061E67D /* bg_3.png */; };
 		D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F1461578F338002F8DF9 /* Agenda.m */; };
+		D9E8F14A157900B4002F8DF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E8F149157900B4002F8DF9 /* QuartzCore.framework */; };
+		D9E8F161157906CC002F8DF9 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */; };
+		D9E8F162157906CC002F8DF9 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +128,10 @@
 		83D5571E155AC6F80061E67D /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
 		D9E8F1451578F338002F8DF9 /* Agenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agenda.h; sourceTree = "<group>"; };
 		D9E8F1461578F338002F8DF9 /* Agenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agenda.m; sourceTree = "<group>"; };
+		D9E8F149157900B4002F8DF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		D9E8F15F157906CC002F8DF9 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +139,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D9E8F14A157900B4002F8DF9 /* QuartzCore.framework in Frameworks */,
 				83AC14C015597DBC007F96EB /* UIKit.framework in Frameworks */,
 				83AC14C215597DBC007F96EB /* Foundation.framework in Frameworks */,
 				83AC14C415597DBC007F96EB /* CoreGraphics.framework in Frameworks */,
@@ -195,6 +203,7 @@
 		838E2F0C155C4F0C008C0C45 /* ThirdPartyLibraries */ = {
 			isa = PBXGroup;
 			children = (
+				D9E8F15D157906CC002F8DF9 /* SVProgressHUD */,
 				838E2F0E155C4F4C008C0C45 /* AFNetworking */,
 			);
 			name = ThirdPartyLibraries;
@@ -274,6 +283,7 @@
 		83AC14BE15597DBC007F96EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D9E8F149157900B4002F8DF9 /* QuartzCore.framework */,
 				83AC14BF15597DBC007F96EB /* UIKit.framework */,
 				83AC14C115597DBC007F96EB /* Foundation.framework */,
 				83AC14C315597DBC007F96EB /* CoreGraphics.framework */,
@@ -354,6 +364,16 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		D9E8F15D157906CC002F8DF9 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */,
+				D9E8F15F157906CC002F8DF9 /* SVProgressHUD.h */,
+				D9E8F160157906CC002F8DF9 /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -432,6 +452,7 @@
 				83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */,
 				83D5571D155AC1FE0061E67D /* bg_2.png in Resources */,
 				83D5571F155AC6F80061E67D /* bg_3.png in Resources */,
+				D9E8F161157906CC002F8DF9 /* SVProgressHUD.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +505,7 @@
 				838E2F2D155C4F4C008C0C45 /* UIImageView+AFNetworking.m in Sources */,
 				838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */,
 				D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */,
+				D9E8F162157906CC002F8DF9 /* SVProgressHUD.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

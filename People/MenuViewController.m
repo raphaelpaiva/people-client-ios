@@ -10,6 +10,7 @@
 #import "ContactsViewController.h"
 #import "DownloadAgendaConnection.h"
 #import "Agenda.h"
+#import "SVProgressHUD.h"
 
 @interface MenuViewController (Private) 
 
@@ -101,6 +102,8 @@
 {
     if (textField.text.length != 0)
     {
+        [SVProgressHUD showWithStatus:@"Carregando..." maskType:SVProgressHUDMaskTypeGradient];
+        
         self.connection = [[[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self] autorelease];
         [connection startConnection];
         
@@ -124,12 +127,18 @@
     {
         [agendas addObject:_connection.response];
         [tableView reloadData];
+        [SVProgressHUD dismissWithSuccess:@""];
     }
 }
 
-- (void)connectionFail:(DownloadAgendaConnection *)connection 
+- (void)connectionFail:(DownloadAgendaConnection *)_connection 
 {
+    NSError *error = (NSError *)_connection.response;
     
+    if (error.code == PAGE_NOT_FOUND_404)
+    {
+        [SVProgressHUD dismissWithError:@"E-mail não encontrado!"];
+    }    
 }
 
 #pragma mark UITableViewDelegate
