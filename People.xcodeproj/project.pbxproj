@@ -43,6 +43,7 @@
 		83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BC65BE155ABEC8005C61AB /* people_logo.png */; };
 		83D5571D155AC1FE0061E67D /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571C155AC1FE0061E67D /* bg_2.png */; };
 		83D5571F155AC6F80061E67D /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571E155AC6F80061E67D /* bg_3.png */; };
+		D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F1461578F338002F8DF9 /* Agenda.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,6 +123,8 @@
 		83BC65BE155ABEC8005C61AB /* people_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people_logo.png; sourceTree = "<group>"; };
 		83D5571C155AC1FE0061E67D /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_2.png; sourceTree = "<group>"; };
 		83D5571E155AC6F80061E67D /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
+		D9E8F1451578F338002F8DF9 /* Agenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agenda.h; sourceTree = "<group>"; };
+		D9E8F1461578F338002F8DF9 /* Agenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agenda.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,9 +155,9 @@
 		832B033F15599369006F950E /* UIViewController */ = {
 			isa = PBXGroup;
 			children = (
-				838DFA071559AA4800833028 /* ContactsViewController */,
-				832B034215599388006F950E /* MenuViewController */,
 				832B034115599378006F950E /* LoginViewController */,
+				832B034215599388006F950E /* MenuViewController */,
+				838DFA071559AA4800833028 /* ContactsViewController */,
 			);
 			name = UIViewController;
 			sourceTree = "<group>";
@@ -334,6 +337,8 @@
 			children = (
 				83AE8A50155C372B00DB956C /* Contact.h */,
 				83AE8A51155C372B00DB956C /* Contact.m */,
+				D9E8F1451578F338002F8DF9 /* Agenda.h */,
+				D9E8F1461578F338002F8DF9 /* Agenda.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -478,6 +483,7 @@
 				838E2F2C155C4F4C008C0C45 /* AFXMLRequestOperation.m in Sources */,
 				838E2F2D155C4F4C008C0C45 /* UIImageView+AFNetworking.m in Sources */,
 				838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */,
+				D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

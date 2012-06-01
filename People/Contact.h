@@ -10,7 +10,13 @@
 
 @interface Contact : NSObject
 {
-
+    NSString *name;
+    NSString *telephone;
 }
+
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *telephone;
+
+- (id)initWithName:(NSString *)name telephone:(NSString *)telephone;
 
 @end

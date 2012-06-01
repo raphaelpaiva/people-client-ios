@@ -7,10 +7,12 @@
 //
 
 #import "DownloadAgendaConnection.h"
+#import "Agenda.h"
+#import "Contact.h"
 
 @interface DownloadAgendaConnection (Private)
 
-- (NSArray *)connectionSuccessful:(id)json;
+- (void)parseJson:(id)json;
 
 @end
 
@@ -37,35 +39,62 @@
     return [NSString stringWithFormat:@"http://localhost:8000/api/download_agenda/%@", email];
 }
 
+#pragma mark Public
+
 - (void)startConnection
 {
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:[self url]]];
     
-    void (^successBlock)(NSURLRequest *, NSHTTPURLResponse *, id);
-    void (^errorBlock)(NSURLRequest *, NSHTTPURLResponse *, NSError *, id);
+    jsonRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request
+                   success:^(NSURLRequest *request, NSHTTPURLResponse *response, id json)
+                   {
+                       [self parseJson:json];
+                   } 
+                   failure:^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id json)
+                   {
+                       self.response = error;
+                       [delegate connectionFail:self];
+                   }];
     
-    successBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, id JSON)
-    {
-        self.response = JSON;
-        [delegate connectionSuccessful:self];
-    };
-    
-    errorBlock = ^(NSURLRequest *request, NSHTTPURLResponse *response, NSError *error, id JSON)
-    {
-        self.response = error;
-        [delegate connectionFail:self];
-    };    
-    
-    jsonRequest = [AFJSONRequestOperation JSONRequestOperationWithRequest:request success:successBlock failure:errorBlock];
     [jsonRequest start];
+}
+
+#pragma mark Private
+
+- (void)parseJson:(id)json
+{
+    if ([json isKindOfClass:[NSArray class]])
+    {
+        NSMutableArray *contacts = [[NSMutableArray alloc] init];
+        
+        for (NSDictionary *dicContact in json)
+        {
+            NSString *name = [dicContact objectForKey:@"nome"];
+            NSString *telephone = [dicContact objectForKey:@"telefone"];
+            
+            Contact *contact = [[Contact alloc] initWithName:name telephone:telephone];
+            [contacts addObject:contact];
+            [contact release];
+        }
+        
+        Agenda *agenda = [[Agenda alloc] initWithEmail:self.email contacts:contacts];
+        self.response = agenda;
+        [contacts release];
+        [agenda release];
+        
+    } else
+    {
+        self.response = nil;
+    }
+    
+    [delegate connectionSuccessful:self];
 }
 
 #pragma mark -
 
-- (void)dealloc {
-    
+- (void)dealloc
+{   
     [url release];
-    [jsonRequest release];
     
     [super dealloc];
 }

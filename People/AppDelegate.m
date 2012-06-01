@@ -12,12 +12,12 @@
 
 @implementation AppDelegate
 
-@synthesize window = _window;
+@synthesize window;
 @synthesize navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
+    window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 
     [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleBlackOpaque;
     
@@ -36,7 +36,7 @@
 
 - (void)dealloc
 {
-    [_window release];
+    [window release];
     [navigationController release];
     
     [super dealloc];

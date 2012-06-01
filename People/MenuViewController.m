@@ -9,10 +9,11 @@
 #import "MenuViewController.h"
 #import "ContactsViewController.h"
 #import "DownloadAgendaConnection.h"
+#import "Agenda.h"
 
 @interface MenuViewController (Private) 
 
-- (void)shouldShowContactTextField:(BOOL)animate;
+- (void)shouldShowEmailTextField:(BOOL)show;
 
 @end
 
@@ -37,51 +38,60 @@
     return self;
 }
 
-- (void)retrieveDataFor:(NSString *)_userEmail
+#pragma mark - View lifecycle
+
+- (void)viewDidLoad
 {
-    contactList = [[NSMutableArray alloc] init];
+    [super viewDidLoad];
+    
+    self.title = @"Menu";
+    
+    emailTextFieldHidden = YES;
+    lblEmail.text = [NSString stringWithFormat:@"Olá %@,", email];
+    imgBackground.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_2.png"]];
+    agendas = [[NSMutableArray alloc] init];
+}
+
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+{
+    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark IBActions
 
-- (IBAction)onClickDownloadContacts
+- (IBAction)onClickDownloadAgenda
 {    
-    if (btnDownloadContacts.tag == 0)
-        btnDownloadContacts.tag = 1;
-    else
-        btnDownloadContacts.tag = 0;
-
-    [self shouldShowContactTextField:btnDownloadContacts.tag];
+    emailTextFieldHidden = !emailTextFieldHidden;
+    [self shouldShowEmailTextField:!emailTextFieldHidden];
 }
 
-- (IBAction)onClickUploadContacts
+- (IBAction)onClickUploadAgenda
 {
     
 }
 
 #pragma mark private
 
-- (void)shouldShowContactTextField:(BOOL)animate 
+- (void)shouldShowEmailTextField:(BOOL)show 
 {
     [UIView animateWithDuration:0.5 animations:^
     {
-        int animationSize = 40;
+        int animationOffset = 40;
 
-        if (!animate)
-        {
-            animationSize = -animationSize;
-            [txtEmailDownloadContact resignFirstResponder];
-        } else
+        if (show)
         {
             [txtEmailDownloadContact becomeFirstResponder];
+        } else
+        {
+            animationOffset = -animationOffset;
+            [txtEmailDownloadContact resignFirstResponder];
         }
 
-        txtEmailDownloadContact.frame = CGRectMake(txtEmailDownloadContact.frame.origin.x, txtEmailDownloadContact.frame.origin.y + animationSize, txtEmailDownloadContact.frame.size.width, txtEmailDownloadContact.frame.size.height);
+        txtEmailDownloadContact.frame = CGRectMake(txtEmailDownloadContact.frame.origin.x, txtEmailDownloadContact.frame.origin.y + animationOffset, txtEmailDownloadContact.frame.size.width, txtEmailDownloadContact.frame.size.height);
 
-        btnUploadContacts.frame = CGRectMake(btnUploadContacts.frame.origin.x, btnUploadContacts.frame.origin.y + animationSize, btnUploadContacts.frame.size.width, btnUploadContacts.frame.size.height);
+        btnUploadContacts.frame = CGRectMake(btnUploadContacts.frame.origin.x, btnUploadContacts.frame.origin.y + animationOffset, btnUploadContacts.frame.size.width, btnUploadContacts.frame.size.height);
 
-        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y + animationSize, tableView.frame.size.width, tableView.frame.size.height - animationSize);
-        
+        tableView.frame = CGRectMake(tableView.frame.origin.x, tableView.frame.origin.y + animationOffset, tableView.frame.size.width, tableView.frame.size.height - animationOffset);
     }];
 }
 
@@ -94,10 +104,11 @@
         self.connection = [[[DownloadAgendaConnection alloc] initWithEmail:textField.text andDelegate:self] autorelease];
         [connection startConnection];
         
+        textField.text = @"";
         [textField resignFirstResponder];
         
-        [self shouldShowContactTextField:NO];
-        btnDownloadContacts.tag = 0;
+        [self shouldShowEmailTextField:NO];
+        emailTextFieldHidden = YES;
         
         return YES;
     }
@@ -109,38 +120,16 @@
 
 - (void)connectionSuccessful:(DownloadAgendaConnection *)_connection 
 {
-    if ([_connection.response isKindOfClass:[NSArray class]])
+    if (_connection.response != nil)
     {
-        NSArray *contatos = (NSArray *)_connection.response;
-        
-        NSDictionary *dicUser = [NSDictionary dictionaryWithObjectsAndKeys:contatos, txtEmailDownloadContact.text, nil];
-        [contactList addObject:dicUser];
+        [agendas addObject:_connection.response];
         [tableView reloadData];
-        
     }
 }
 
 - (void)connectionFail:(DownloadAgendaConnection *)connection 
 {
     
-}
-
-#pragma mark - View lifecycle
-
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    
-    self.title = @"Menu";
-    lblEmail.text = [NSString stringWithFormat:@"Olá %@,", email];
-    imgBackground.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg_2.png"]];
-    
-    [self retrieveDataFor:email];
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark UITableViewDelegate
@@ -152,19 +141,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSDictionary *userDic = (NSDictionary *)[contactList objectAtIndex:indexPath.row];
-    NSString *_email = [[userDic allKeys] lastObject];
-    NSArray *contacts = [[userDic allValues] lastObject];
-    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:_email andContacts:contacts];
+    Agenda *agenda = [agendas objectAtIndex:indexPath.row];
+    
+    ContactsViewController *contactsViewController = [[ContactsViewController alloc] initWithEmail:agenda.email andContacts:agenda.contacts];
     
     [self.navigationController pushViewController:contactsViewController animated:YES];
+    
+    [contactsViewController release];
 }
 
 #pragma mark UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return contactList.count;
+    return agendas.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)_tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -180,8 +170,9 @@
         tableViewCell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
-    NSDictionary *contactDic = [contactList objectAtIndex:indexPath.row];
-    tableViewCell.textLabel.text = [[contactDic allKeys] lastObject];
+    Agenda *agenda = [agendas objectAtIndex:indexPath.row];
+    
+    tableViewCell.textLabel.text = agenda.email;
     
     return tableViewCell;
 }
@@ -203,7 +194,7 @@
 - (void)dealloc
 {    
     [lblEmail release];
-    [contactList release];
+    [agendas release];
     [imgBackground release];
     [tableView release];
     [connection release];

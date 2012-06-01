@@ -11,11 +11,13 @@
 
 @interface MenuViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, ConnectionDelegate>
 {
+    BOOL emailTextFieldHidden;
+    
     UILabel *lblEmail;
     UIImageView *imgBackground;
     UITableView *tableView;
     NSString *email;
-    NSMutableArray *contactList;
+    NSMutableArray *agendas;
     
     DownloadAgendaConnection *connection;
 }
@@ -30,7 +32,7 @@
 @property (nonatomic, copy) NSString *email;
 
 - (id)initWithEmail:(NSString *)_email;
-- (IBAction)onClickDownloadContacts;
-- (IBAction)onClickUploadContacts;
+- (IBAction)onClickDownloadAgenda;
+- (IBAction)onClickUploadAgenda;
 
 @end

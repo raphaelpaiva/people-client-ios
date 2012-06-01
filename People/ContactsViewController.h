@@ -13,9 +13,10 @@
     NSString *email;
     NSArray *contacts;
 }
+
 @property (nonatomic, copy) NSString *email;
 @property (nonatomic, retain) NSArray *contacts;
 
-- (id)initWithEmail:(NSString *)_email andContacts:(NSArray *)contacts;
+- (id)initWithEmail:(NSString *)email andContacts:(NSArray *)contacts;
 
 @end
