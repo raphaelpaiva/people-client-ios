@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "AgendaManager.h"
 
+#import "SBJson.h"
 
 @interface UploadAgendaConnection : NSObject
 {
