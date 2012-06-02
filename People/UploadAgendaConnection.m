@@ -38,6 +38,9 @@
     NSDictionary *contato2 = [NSDictionary dictionaryWithObjectsAndKeys:@"(21) 8773-5678", @"telefone", @"pedro", @"nome", nil];
 
     NSArray *array = [[NSArray alloc] initWithObjects:contato1, contato2, nil];
+    
+    
+    
         
     SBJsonWriter *writer = [[SBJsonWriter alloc] init];
     NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[writer stringWithObject:array], @"contatos", nil];

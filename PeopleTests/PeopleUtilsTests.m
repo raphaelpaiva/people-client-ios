@@ -34,20 +34,18 @@
 
 - (void)testValidateAgenda_Empty
 {
-    NSArray *array = [[NSArray alloc] initWithObjects: nil];
-    BOOL result = [PeopleUtils validateAgenda: array];
+    NSArray *array = [[NSArray alloc] initWithObjects:nil];
+    BOOL result = [PeopleUtils validateAgenda:array];
     
     STAssertFalse(result, @"Result should be false.");
-    
 }
 
 - (void)testValidateAgenda_NotEmpty
 {
-    NSArray *array = [NSArray arrayWithObjects: @"Red", @"Green", @"Blue", @"Yellow", nil];
-    BOOL result = [PeopleUtils validateAgenda: array];
+    NSArray *array = [NSArray arrayWithObjects:@"Red", @"Green", @"Blue", @"Yellow", nil];
+    BOOL result = [PeopleUtils validateAgenda:array];
     
     STAssertTrue(result, @"Result should be true.");
-    
 }
 
 @end

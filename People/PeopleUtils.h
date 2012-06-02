@@ -12,5 +12,6 @@
 
 + (BOOL)validateEmail:(NSString *)email;
 + (void)showAlertViewWithMessage:(NSString *)message;
++ (BOOL)validateAgenda:(NSArray *)array;
 
 @end
