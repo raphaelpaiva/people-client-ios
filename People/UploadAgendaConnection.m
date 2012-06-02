@@ -7,6 +7,7 @@
 //
 
 #import "UploadAgendaConnection.h"
+#import "PeopleUtils.h"
 
 @implementation UploadAgendaConnection
 
@@ -41,27 +42,39 @@
         
         [array addObject:dict];
     }
-  
-    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
-    NSDictionary *dados = [NSDictionary dictionaryWithObjectsAndKeys:[writer stringWithObject:array], @"contatos", nil];
-  
-    [array release];
-    [writer release];
     
-    httpClient = [[AFHTTPClient alloc] initWithBaseURL:
-                            [NSURL URLWithString:self.url]];
+    //validacao se possuem contatos...
+    BOOL isAgendaValid = [PeopleUtils validateAgenda:array];
+    
+    if (isAgendaValid)
+    {
+      
+        SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+        NSDictionary *dados = [NSDictionary dictionaryWithObjectsAndKeys:[writer stringWithObject:array], @"contatos", nil];
+      
+        [array release];
+        [writer release];
+        
+        httpClient = [[AFHTTPClient alloc] initWithBaseURL:
+                                [NSURL URLWithString:self.url]];
 
-    //Continuar, o que enviar?
-    [httpClient postPath:self.url parameters:dados
-                 success:^(AFHTTPRequestOperation *operation, id responseObject)
-                 {
-                     NSString *text = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding] autorelease];
-                     NSLog(@"Response: %@", text);
-                 } 
-                 failure:^(AFHTTPRequestOperation *operation, NSError *error)
-                 {
-                     NSLog(@"%@", [error localizedDescription]);
-                 }];
+        //Continuar, o que enviar?
+        [httpClient postPath:self.url parameters:dados
+                     success:^(AFHTTPRequestOperation *operation, id responseObject)
+                     {
+                         NSString *text = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding] autorelease];
+                         NSLog(@"Response: %@", text);
+                         [PeopleUtils showAlertViewWithMessage:MSG_SUCCESS_AGENDA];
+                     } 
+                     failure:^(AFHTTPRequestOperation *operation, NSError *error)
+                     {
+                         NSLog(@"%@", [error localizedDescription]);
+                     }];
+    }
+    else
+    {
+        [PeopleUtils showAlertViewWithMessage:MSG_INVALID_AGENDA];
+    }
 }
 
 #pragma mark -

@@ -14,4 +14,6 @@
 
     #define PAGE_NOT_FOUND_404 -1011
     #define MSG_INVALID_EMAIL @"Por favor insira um email válido."
+    #define MSG_INVALID_AGENDA @"Agenda em branco."
+    #define MSG_SUCCESS_AGENDA @"Agenda enviada com sucesso."
 #endif
