@@ -21,7 +21,6 @@
     ABAddressBookRef addressBook = ABAddressBookCreate();
     CFArrayRef abAllPeople = ABAddressBookCopyArrayOfAllPeople(addressBook);
     CFIndex nPeople = ABAddressBookGetPersonCount(addressBook);
-    CFRelease(addressBook);
     
     for (int i = 0; i < nPeople; i++)
     {
@@ -59,6 +58,7 @@
     }
     
     CFRelease(abAllPeople);
+    CFRelease(addressBook);
     
     return [contacts autorelease];
 }
