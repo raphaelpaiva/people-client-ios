@@ -11,5 +11,6 @@
 @interface PeopleUtils : NSObject
 
 + (BOOL)validateEmail:(NSString *)email;
++ (void)showAlertViewWithMessage:(NSString *)message;
 
 @end
