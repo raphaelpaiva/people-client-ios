@@ -7,13 +7,28 @@
 //
 
 #import "PeopleUtilsTests.h"
+#import "PeopleUtils.h"
 
 @implementation PeopleUtilsTests
 
-// All code under test must be linked into the Unit Test bundle
-- (void)testMath
+- (void)testValidateEmail_ValidEmail
 {
-    STAssertTrue((1 + 1) == 2, @"Compiler isn't feeling well today :-(");
+    BOOL result = [PeopleUtils validateEmail:@"test@example.com"];
+    
+    STAssertTrue(result, @"Result should be true.");
 }
 
+- (void)testValidateEmail_Empty
+{
+    BOOL result = [PeopleUtils validateEmail:@""];
+    
+    STAssertFalse(result, @"Result should be false.");
+}
+
+- (void)testValidateEmail_MalFormed
+{
+    BOOL result = [PeopleUtils validateEmail:@"abc"];
+        
+    STAssertFalse(result, @"Result should be false.");
+}
 @end

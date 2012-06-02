@@ -10,4 +10,6 @@
 
 @interface PeopleUtils : NSObject
 
++ (BOOL)validateEmail:(NSString *)email;
+
 @end
