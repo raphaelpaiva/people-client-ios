@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		832B0346155993B7006F950E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832B0344155993B7006F950E /* MenuViewController.m */; };
 		832B0347155993B7006F950E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832B0345155993B7006F950E /* MenuViewController.xib */; };
+		8356EB14157A8B9200CF7A04 /* MenuViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8356EB11157A8A0400CF7A04 /* MenuViewControllerTests.m */; };
 		835ADA13157A41E9000932F0 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AD9FB157A41E9000932F0 /* NSObject+SBJson.m */; };
 		835ADA14157A41E9000932F0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AD9FE157A41E9000932F0 /* SBJsonParser.m */; };
 		835ADA15157A41E9000932F0 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA00157A41E9000932F0 /* SBJsonStreamParser.m */; };
@@ -81,6 +82,8 @@
 		832B0343155993B7006F950E /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		832B0344155993B7006F950E /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		832B0345155993B7006F950E /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		8356EB10157A8A0400CF7A04 /* MenuViewControllerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewControllerTests.h; sourceTree = "<group>"; };
+		8356EB11157A8A0400CF7A04 /* MenuViewControllerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewControllerTests.m; sourceTree = "<group>"; };
 		835AD9FA157A41E9000932F0 /* NSObject+SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJson.h"; sourceTree = "<group>"; };
 		835AD9FB157A41E9000932F0 /* NSObject+SBJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJson.m"; sourceTree = "<group>"; };
 		835AD9FC157A41E9000932F0 /* SBJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJson.h; sourceTree = "<group>"; };
@@ -134,7 +137,6 @@
 		838E2F21155C4F4C008C0C45 /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		838E2F22155C4F4C008C0C45 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		838E2F23155C4F4C008C0C45 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
-		838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnectionTests.h; sourceTree = "<group>"; };
 		838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnection.h; sourceTree = "<group>"; };
 		838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnection.m; sourceTree = "<group>"; };
 		83AB35F41575433F0061B032 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../libOCMock.a; sourceTree = "<group>"; };
@@ -418,11 +420,12 @@
 				83AC14EA15597DBD007F96EB /* PeopleTests.m */,
 				83AE8A56155C383600DB956C /* ContactTests.h */,
 				83AE8A57155C383600DB956C /* ContactTests.m */,
-				838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */,
 				835ADA20157A4712000932F0 /* PeopleUtilsTests.h */,
 				835ADA21157A4712000932F0 /* PeopleUtilsTests.m */,
 				8C18FE10157A426E002CC492 /* AgendaManagerTests.h */,
 				8C18FE11157A426E002CC492 /* AgendaManagerTests.m */,
+				8356EB10157A8A0400CF7A04 /* MenuViewControllerTests.h */,
+				8356EB11157A8A0400CF7A04 /* MenuViewControllerTests.m */,
 			);
 			path = PeopleTests;
 			sourceTree = "<group>";
@@ -653,6 +656,7 @@
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
 				835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */,
 				8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */,
+				8356EB14157A8B9200CF7A04 /* MenuViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
