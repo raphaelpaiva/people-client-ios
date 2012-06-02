@@ -33,6 +33,7 @@
 @property (nonatomic, retain) DownloadAgendaConnection *downloadAgendaConnection;
 @property (nonatomic, retain) UploadAgendaConnection *uploadAgendaConnection;
 @property (nonatomic, copy) NSString *email;
+@property (nonatomic, retain) NSMutableArray *agendas;
 
 - (id)initWithEmail:(NSString *)_email;
 - (IBAction)onClickDownloadAgenda;
