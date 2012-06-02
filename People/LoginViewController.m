@@ -49,7 +49,7 @@
     BOOL isLoginValid = [PeopleUtils validateEmail:txtLogin.text];
     
     if (!isLoginValid) {
-        [PeopleUtils showAlertViewWithMessage:@"Por favor digite um email valido."];
+        [PeopleUtils showAlertViewWithMessage:MSG_INVALID_EMAIL];
 
         return;
     }

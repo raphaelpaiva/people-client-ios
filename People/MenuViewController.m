@@ -10,6 +10,7 @@
 #import "AgendaViewController.h"
 #import "Agenda.h"
 #import "SVProgressHUD.h"
+#import "PeopleUtils.h"
 
 @interface MenuViewController (Private) 
 
@@ -114,7 +115,9 @@
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (textField.text.length != 0)
+    BOOL isEmailValid = [PeopleUtils validateEmail:textField.text];
+    
+    if (isEmailValid)
     {
         [SVProgressHUD showWithStatus:@"Carregando..." maskType:SVProgressHUDMaskTypeGradient];
         
@@ -128,6 +131,10 @@
         emailTextFieldHidden = YES;
         
         return YES;
+    }
+    else
+    {
+        [PeopleUtils showAlertViewWithMessage:MSG_INVALID_EMAIL];
     }
     
     return NO;

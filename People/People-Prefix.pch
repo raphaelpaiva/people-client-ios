@@ -13,4 +13,5 @@
     #import <Foundation/Foundation.h>
 
     #define PAGE_NOT_FOUND_404 -1011
+    #define MSG_INVALID_EMAIL @"Por favor insira um email válido."
 #endif
