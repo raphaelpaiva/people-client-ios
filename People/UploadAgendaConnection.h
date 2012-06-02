@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
+#import "AgendaManager.h"
+
 
 @interface UploadAgendaConnection : NSObject
 {

@@ -105,7 +105,7 @@
 {
     if (buttonIndex == 1)
     {
-        self.uploadAgendaConnection = [[UploadAgendaConnection alloc] initWithEmail:self.email];
+        self.uploadAgendaConnection = [[[UploadAgendaConnection alloc] initWithEmail:self.email] autorelease];
         [uploadAgendaConnection startConnection];
     }
 }
