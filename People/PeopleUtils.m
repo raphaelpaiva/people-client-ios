@@ -31,4 +31,17 @@
     [alertView release];
 }
 
+
++ (BOOL)validateAgenda:(NSArray *)array
+{
+    int count = [array count];
+    BOOL isValid = count > 0;
+    
+    if(isValid)
+        return YES;  
+    else
+        return NO;
+}
+
+
 @end
