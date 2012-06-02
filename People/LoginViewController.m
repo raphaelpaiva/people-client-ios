@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "MenuViewController.h"
+#import "PeopleUtils.h"
 
 @implementation LoginViewController
 
@@ -45,6 +46,17 @@
 
 - (IBAction)login
 {
+    BOOL isLoginValid = [PeopleUtils validateEmail:txtLogin.text];
+    
+    if (!isLoginValid) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"People" message:@"Por favor digite um email válido." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [alertView show];
+        [alertView release];
+
+        return;
+    }
+    
     MenuViewController *menuViewController = [[MenuViewController alloc] initWithEmail:txtLogin.text];
     
     [self.navigationController pushViewController:menuViewController animated:YES];

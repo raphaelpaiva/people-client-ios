@@ -21,6 +21,8 @@
 		835ADA1C157A41E9000932F0 /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA0E157A41E9000932F0 /* SBJsonTokeniser.m */; };
 		835ADA1D157A41E9000932F0 /* SBJsonUTF8Stream.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA10157A41E9000932F0 /* SBJsonUTF8Stream.m */; };
 		835ADA1E157A41E9000932F0 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA12157A41E9000932F0 /* SBJsonWriter.m */; };
+		835ADA25157A47CC000932F0 /* PeopleUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA24157A47CC000932F0 /* PeopleUtils.m */; };
+		835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA21157A4712000932F0 /* PeopleUtilsTests.m */; };
 		838DFA0C1559AA8B00833028 /* AgendaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838DFA0A1559AA8B00833028 /* AgendaViewController.m */; };
 		838DFA0D1559AA8B00833028 /* AgendaViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 838DFA0B1559AA8B00833028 /* AgendaViewController.xib */; };
 		838E2F24155C4F4C008C0C45 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F10155C4F4C008C0C45 /* AFHTTPClient.m */; };
@@ -102,6 +104,10 @@
 		835ADA10157A41E9000932F0 /* SBJsonUTF8Stream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonUTF8Stream.m; sourceTree = "<group>"; };
 		835ADA11157A41E9000932F0 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		835ADA12157A41E9000932F0 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
+		835ADA20157A4712000932F0 /* PeopleUtilsTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleUtilsTests.h; sourceTree = "<group>"; };
+		835ADA21157A4712000932F0 /* PeopleUtilsTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleUtilsTests.m; sourceTree = "<group>"; };
+		835ADA23157A47CC000932F0 /* PeopleUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeopleUtils.h; sourceTree = "<group>"; };
+		835ADA24157A47CC000932F0 /* PeopleUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeopleUtils.m; sourceTree = "<group>"; };
 		838DFA091559AA8B00833028 /* AgendaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaViewController.h; sourceTree = "<group>"; };
 		838DFA0A1559AA8B00833028 /* AgendaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaViewController.m; sourceTree = "<group>"; };
 		838DFA0B1559AA8B00833028 /* AgendaViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AgendaViewController.xib; sourceTree = "<group>"; };
@@ -376,6 +382,8 @@
 				838E2F31155C51DF008C0C45 /* Connection */,
 				838E2F0C155C4F0C008C0C45 /* ThirdPartyLibraries */,
 				83AC14C615597DBC007F96EB /* Supporting Files */,
+				835ADA23157A47CC000932F0 /* PeopleUtils.h */,
+				835ADA24157A47CC000932F0 /* PeopleUtils.m */,
 			);
 			path = People;
 			sourceTree = "<group>";
@@ -403,6 +411,8 @@
 				83AE8A57155C383600DB956C /* ContactTests.m */,
 				838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */,
 				838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */,
+				835ADA20157A4712000932F0 /* PeopleUtilsTests.h */,
+				835ADA21157A4712000932F0 /* PeopleUtilsTests.m */,
 			);
 			path = PeopleTests;
 			sourceTree = "<group>";
@@ -611,6 +621,7 @@
 				835ADA1C157A41E9000932F0 /* SBJsonTokeniser.m in Sources */,
 				835ADA1D157A41E9000932F0 /* SBJsonUTF8Stream.m in Sources */,
 				835ADA1E157A41E9000932F0 /* SBJsonWriter.m in Sources */,
+				835ADA25157A47CC000932F0 /* PeopleUtils.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -621,6 +632,7 @@
 				83AC14EB15597DBD007F96EB /* PeopleTests.m in Sources */,
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
 				838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */,
+				835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
