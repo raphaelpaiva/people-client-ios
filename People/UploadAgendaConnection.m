@@ -34,17 +34,20 @@
 
 - (void)startConnection 
 {
-    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:@"(21) 1234-5678", @"telefone", @"lucas", @"nome", nil];
-    NSArray *array = [[NSArray alloc] initWithObjects:dic, nil];
+    NSDictionary *contato1 = [NSDictionary dictionaryWithObjectsAndKeys:@"(21) 1234-5678", @"telefone", @"lucas", @"nome", nil];
+    NSDictionary *contato2 = [NSDictionary dictionaryWithObjectsAndKeys:@"(21) 8773-5678", @"telefone", @"pedro", @"nome", nil];
+
+    NSArray *array = [[NSArray alloc] initWithObjects:contato1, contato2, nil];
+        
+    SBJsonWriter *writer = [[SBJsonWriter alloc] init];
+    NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[writer stringWithObject:array], @"contatos", nil];
     
-    NSError *error;
-    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:0 error:&error];
     
     httpClient = [[AFHTTPClient alloc] initWithBaseURL:
                             [NSURL URLWithString:self.url]];
 
     //Continuar, o que enviar?
-    [httpClient postPath:self.url parameters:data 
+    [httpClient postPath:self.url parameters:dic
                  success:^(AFHTTPRequestOperation *operation, id responseObject)
                  {
                      NSString *text = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding] autorelease];
