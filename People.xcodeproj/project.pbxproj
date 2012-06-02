@@ -35,7 +35,6 @@
 		838E2F2B155C4F4C008C0C45 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F1F155C4F4C008C0C45 /* AFURLConnectionOperation.m */; };
 		838E2F2C155C4F4C008C0C45 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F21155C4F4C008C0C45 /* AFXMLRequestOperation.m */; };
 		838E2F2D155C4F4C008C0C45 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F23155C4F4C008C0C45 /* UIImageView+AFNetworking.m */; };
-		838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */; };
 		838E2F34155C5220008C0C45 /* DownloadAgendaConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */; };
 		83AB35FC1575433F0061B032 /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AB35F41575433F0061B032 /* libOCMock.a */; };
 		83AC14C015597DBC007F96EB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83AC14BF15597DBC007F96EB /* UIKit.framework */; };
@@ -136,7 +135,6 @@
 		838E2F22155C4F4C008C0C45 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		838E2F23155C4F4C008C0C45 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnectionTests.h; sourceTree = "<group>"; };
-		838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnectionTests.m; sourceTree = "<group>"; };
 		838E2F32155C5220008C0C45 /* DownloadAgendaConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadAgendaConnection.h; sourceTree = "<group>"; };
 		838E2F33155C5220008C0C45 /* DownloadAgendaConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadAgendaConnection.m; sourceTree = "<group>"; };
 		83AB35F41575433F0061B032 /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOCMock.a; path = ../libOCMock.a; sourceTree = "<group>"; };
@@ -421,7 +419,6 @@
 				83AE8A56155C383600DB956C /* ContactTests.h */,
 				83AE8A57155C383600DB956C /* ContactTests.m */,
 				838E2F2E155C5140008C0C45 /* DownloadAgendaConnectionTests.h */,
-				838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */,
 				835ADA20157A4712000932F0 /* PeopleUtilsTests.h */,
 				835ADA21157A4712000932F0 /* PeopleUtilsTests.m */,
 				8C18FE10157A426E002CC492 /* AgendaManagerTests.h */,
@@ -654,7 +651,6 @@
 			files = (
 				83AC14EB15597DBD007F96EB /* PeopleTests.m in Sources */,
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
-				838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */,
 				835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */,
 				8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */,
 			);
