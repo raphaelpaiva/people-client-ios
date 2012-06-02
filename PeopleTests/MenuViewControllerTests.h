@@ -1,8 +1,8 @@
 //
-//  SynchronizedContactsConnection.h
+//  MenuViewControllerTests.h
 //  People
 //
-//  Created by DCC UFRJ on 10/05/12.
+//  Created by DCC UFRJ on 02/06/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
@@ -10,11 +10,7 @@
 //  See Also: http://developer.apple.com/iphone/library/documentation/Xcode/Conceptual/iphone_development/135-Unit_Testing_Applications/unit_testing_applications.html
 
 #import <SenTestingKit/SenTestingKit.h>
-#import "DownloadAgendaConnection.h"
 
-@interface DownloadAgendaConnectionTests : SenTestCase
-{
-    DownloadAgendaConnection *connection;
-}
+@interface MenuViewControllerTests : SenTestCase
 
 @end
