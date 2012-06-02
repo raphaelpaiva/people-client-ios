@@ -49,10 +49,7 @@
     BOOL isLoginValid = [PeopleUtils validateEmail:txtLogin.text];
     
     if (!isLoginValid) {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"People" message:@"Por favor digite um email válido." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-        
-        [alertView show];
-        [alertView release];
+        [PeopleUtils showAlertViewWithMessage:@"Por favor digite um email valido."];
 
         return;
     }
