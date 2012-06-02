@@ -220,7 +220,7 @@
 			children = (
 				832B034115599378006F950E /* LoginViewController */,
 				832B034215599388006F950E /* MenuViewController */,
-				838DFA071559AA4800833028 /* ContactsViewController */,
+				838DFA071559AA4800833028 /* AgendaViewController */,
 			);
 			name = UIViewController;
 			sourceTree = "<group>";
@@ -278,14 +278,14 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
-		838DFA071559AA4800833028 /* ContactsViewController */ = {
+		838DFA071559AA4800833028 /* AgendaViewController */ = {
 			isa = PBXGroup;
 			children = (
 				838DFA091559AA8B00833028 /* AgendaViewController.h */,
 				838DFA0A1559AA8B00833028 /* AgendaViewController.m */,
 				838DFA0B1559AA8B00833028 /* AgendaViewController.xib */,
 			);
-			name = ContactsViewController;
+			name = AgendaViewController;
 			sourceTree = "<group>";
 		};
 		838E2F0C155C4F0C008C0C45 /* ThirdPartyLibraries */ = {
