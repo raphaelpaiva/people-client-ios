@@ -35,14 +35,15 @@
 - (void)startConnection 
 {
     NSMutableArray *array = [[NSMutableArray alloc] init];
-    Contact *contact = nil;
     NSLog(@"%@",  [AgendaManager contacts]);
-    for (contact in [AgendaManager contacts]) {
+    
+    
+    for (Contact *contact in [AgendaManager contacts]) {
         NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:contact.name, @"nome", contact.telephone, @"telefone", nil];
         
         [array addObject:dict];
     }
-        
+    NSLog(@"%@", array);
     SBJsonWriter *writer = [[SBJsonWriter alloc] init];
     NSDictionary *dados = [NSDictionary dictionaryWithObjectsAndKeys:[writer stringWithObject:array], @"contatos", nil];
     NSLog(@"%@", dados);
