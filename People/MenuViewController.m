@@ -29,6 +29,7 @@
 @synthesize email;
 @synthesize downloadAgendaConnection;
 @synthesize uploadAgendaConnection;
+@synthesize agendas;
 
 - (id)initWithEmail:(NSString *)_email
 {
@@ -146,9 +147,18 @@
 {
     if (_connection.response != nil)
     {
-        [agendas addObject:_connection.response];
-        [tableView reloadData];
-        [SVProgressHUD dismissWithSuccess:@""];
+        Agenda *agendasFromServer = (Agenda *) _connection.response;
+        
+        if (agendasFromServer.contacts.count == 0)
+        {
+            [SVProgressHUD dismissWithError:@"A agenda selecionada está vazia."];
+        }
+        else
+        {
+            [agendas addObject:_connection.response];
+            [tableView reloadData];
+            [SVProgressHUD dismissWithSuccess:@""];  
+        }
     }
 }
 
