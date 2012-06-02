@@ -57,6 +57,9 @@
 		83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BC65BE155ABEC8005C61AB /* people_logo.png */; };
 		83D5571D155AC1FE0061E67D /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571C155AC1FE0061E67D /* bg_2.png */; };
 		83D5571F155AC6F80061E67D /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571E155AC6F80061E67D /* bg_3.png */; };
+		8C18FE0E157A3DA7002CC492 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C18FE0D157A3DA7002CC492 /* AddressBook.framework */; };
+		8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C18FE11157A426E002CC492 /* AgendaManagerTests.m */; };
+		8C18FE16157A438A002CC492 /* AgendaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C18FE15157A438A002CC492 /* AgendaManager.m */; };
 		D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */ = {isa = PBXBuildFile; fileRef = D9E8F1461578F338002F8DF9 /* Agenda.m */; };
 		D9E8F14A157900B4002F8DF9 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9E8F149157900B4002F8DF9 /* QuartzCore.framework */; };
 		D9E8F161157906CC002F8DF9 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D9E8F15E157906CC002F8DF9 /* SVProgressHUD.bundle */; };
@@ -170,6 +173,11 @@
 		83BC65BE155ABEC8005C61AB /* people_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people_logo.png; sourceTree = "<group>"; };
 		83D5571C155AC1FE0061E67D /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_2.png; sourceTree = "<group>"; };
 		83D5571E155AC6F80061E67D /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
+		8C18FE0D157A3DA7002CC492 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		8C18FE10157A426E002CC492 /* AgendaManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaManagerTests.h; sourceTree = "<group>"; };
+		8C18FE11157A426E002CC492 /* AgendaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaManagerTests.m; sourceTree = "<group>"; };
+		8C18FE14157A438A002CC492 /* AgendaManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaManager.h; sourceTree = "<group>"; };
+		8C18FE15157A438A002CC492 /* AgendaManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaManager.m; sourceTree = "<group>"; };
 		D9E8F1451578F338002F8DF9 /* Agenda.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Agenda.h; sourceTree = "<group>"; };
 		D9E8F1461578F338002F8DF9 /* Agenda.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Agenda.m; sourceTree = "<group>"; };
 		D9E8F149157900B4002F8DF9 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -185,6 +193,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C18FE0E157A3DA7002CC492 /* AddressBook.framework in Frameworks */,
 				D9E8F14A157900B4002F8DF9 /* QuartzCore.framework in Frameworks */,
 				83AC14C015597DBC007F96EB /* UIKit.framework in Frameworks */,
 				83AC14C215597DBC007F96EB /* Foundation.framework in Frameworks */,
@@ -363,6 +372,7 @@
 		83AC14BE15597DBC007F96EB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8C18FE0D157A3DA7002CC492 /* AddressBook.framework */,
 				D9E8F149157900B4002F8DF9 /* QuartzCore.framework */,
 				83AC14BF15597DBC007F96EB /* UIKit.framework */,
 				83AC14C115597DBC007F96EB /* Foundation.framework */,
@@ -377,6 +387,7 @@
 			children = (
 				83AC14CE15597DBC007F96EB /* AppDelegate.h */,
 				83AC14CF15597DBC007F96EB /* AppDelegate.m */,
+				8C18FE13157A436F002CC492 /* Controller */,
 				83AE8A4F155C343C00DB956C /* Model */,
 				832B033F15599369006F950E /* UIViewController */,
 				838E2F31155C51DF008C0C45 /* Connection */,
@@ -413,6 +424,8 @@
 				838E2F2F155C5140008C0C45 /* DownloadAgendaConnectionTests.m */,
 				835ADA20157A4712000932F0 /* PeopleUtilsTests.h */,
 				835ADA21157A4712000932F0 /* PeopleUtilsTests.m */,
+				8C18FE10157A426E002CC492 /* AgendaManagerTests.h */,
+				8C18FE11157A426E002CC492 /* AgendaManagerTests.m */,
 			);
 			path = PeopleTests;
 			sourceTree = "<group>";
@@ -446,6 +459,15 @@
 				83BC65BE155ABEC8005C61AB /* people_logo.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		8C18FE13157A436F002CC492 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8C18FE14157A438A002CC492 /* AgendaManager.h */,
+				8C18FE15157A438A002CC492 /* AgendaManager.m */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		D9E8F15D157906CC002F8DF9 /* SVProgressHUD */ = {
@@ -609,6 +631,7 @@
 				D9E8F1471578F338002F8DF9 /* Agenda.m in Sources */,
 				D9E8F162157906CC002F8DF9 /* SVProgressHUD.m in Sources */,
 				D9E8F16715790BFE002F8DF9 /* UploadAgendaConnection.m in Sources */,
+				8C18FE16157A438A002CC492 /* AgendaManager.m in Sources */,
 				835ADA13157A41E9000932F0 /* NSObject+SBJson.m in Sources */,
 				835ADA14157A41E9000932F0 /* SBJsonParser.m in Sources */,
 				835ADA15157A41E9000932F0 /* SBJsonStreamParser.m in Sources */,
@@ -633,6 +656,7 @@
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
 				838E2F30155C5140008C0C45 /* DownloadAgendaConnectionTests.m in Sources */,
 				835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */,
+				8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -679,7 +703,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: PatrÃ­cia  Borges (GWEBAK3AFU)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -694,6 +718,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "CEAA4125-CEF4-4AE0-9AAF-8AFC141DFD9F";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
