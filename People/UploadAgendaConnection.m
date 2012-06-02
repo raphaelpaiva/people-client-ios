@@ -8,6 +8,7 @@
 
 #import "UploadAgendaConnection.h"
 #import "PeopleUtils.h"
+#import "SVProgressHUD.h"
 
 @implementation UploadAgendaConnection
 
@@ -64,10 +65,12 @@
                      {
                          NSString *text = [[[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding] autorelease];
                          NSLog(@"Response: %@", text);
+                         [SVProgressHUD dismiss];
                          [PeopleUtils showAlertViewWithMessage:MSG_SUCCESS_AGENDA];
                      } 
                      failure:^(AFHTTPRequestOperation *operation, NSError *error)
                      {
+                         [SVProgressHUD dismissWithError:[error description]];
                          NSLog(@"%@", [error localizedDescription]);
                      }];
     }

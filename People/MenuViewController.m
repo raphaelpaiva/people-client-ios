@@ -106,6 +106,7 @@
 {
     if (buttonIndex == 1)
     {
+        [SVProgressHUD showWithStatus:@"Carregando..." maskType:SVProgressHUDMaskTypeGradient];
         self.uploadAgendaConnection = [[[UploadAgendaConnection alloc] initWithEmail:self.email] autorelease];
         [uploadAgendaConnection startConnection];
     }

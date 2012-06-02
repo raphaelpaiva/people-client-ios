@@ -47,7 +47,7 @@
     Contact *contact = [agenda.contacts objectAtIndex:indexPath.row];
     NSString *stringTel = [NSString stringWithFormat:@"tel:%@", contact.telephone];
     NSURL *phoneURL = [[NSURL alloc] initWithString:stringTel];
-    BOOL teste = [[UIApplication sharedApplication] openURL:phoneURL];
+    [[UIApplication sharedApplication] openURL:phoneURL];
     [phoneURL release];
 }
 
