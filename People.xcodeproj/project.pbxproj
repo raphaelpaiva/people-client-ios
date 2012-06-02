@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		832B0346155993B7006F950E /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 832B0344155993B7006F950E /* MenuViewController.m */; };
 		832B0347155993B7006F950E /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 832B0345155993B7006F950E /* MenuViewController.xib */; };
-		8356EB12157A8A0400CF7A04 /* MenuViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8356EB11157A8A0400CF7A04 /* MenuViewControllerTests.m */; };
+		8356EB14157A8B9200CF7A04 /* MenuViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8356EB11157A8A0400CF7A04 /* MenuViewControllerTests.m */; };
 		835ADA13157A41E9000932F0 /* NSObject+SBJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AD9FB157A41E9000932F0 /* NSObject+SBJson.m */; };
 		835ADA14157A41E9000932F0 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835AD9FE157A41E9000932F0 /* SBJsonParser.m */; };
 		835ADA15157A41E9000932F0 /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 835ADA00157A41E9000932F0 /* SBJsonStreamParser.m */; };
@@ -645,7 +645,6 @@
 				835ADA1D157A41E9000932F0 /* SBJsonUTF8Stream.m in Sources */,
 				835ADA1E157A41E9000932F0 /* SBJsonWriter.m in Sources */,
 				835ADA25157A47CC000932F0 /* PeopleUtils.m in Sources */,
-				8356EB12157A8A0400CF7A04 /* MenuViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +656,7 @@
 				83AE8A58155C383600DB956C /* ContactTests.m in Sources */,
 				835ADA26157A4839000932F0 /* PeopleUtilsTests.m in Sources */,
 				8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */,
+				8356EB14157A8B9200CF7A04 /* MenuViewControllerTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
