@@ -34,16 +34,13 @@
         for (int i = 0; i < ABMultiValueGetCount(abPhones); i++) {
                        
             CFTypeRef abMobileLabel = ABMultiValueCopyLabelAtIndex(abPhones, i);
-            NSString* mobileLabel = [NSString stringWithFormat:@"%@",abMobileLabel];
             CFRelease(abMobileLabel);
+
+            CFTypeRef cftelephone = ABMultiValueCopyValueAtIndex(abPhones, i);
+            telephone = [NSString stringWithFormat:@"%@", cftelephone];
+            CFRelease(cftelephone);
             
-            if([mobileLabel isEqualToString:(NSString *)kABPersonPhoneMobileLabel])
-            {
-                CFTypeRef cftelephone = ABMultiValueCopyValueAtIndex(abPhones, i);
-                telephone = [NSString stringWithFormat:@"%@", cftelephone];
-                CFRelease(cftelephone);
-                break;
-            } 
+            break;
         }
 
         CFRelease(abPhones);
