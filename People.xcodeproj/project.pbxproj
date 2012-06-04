@@ -57,6 +57,7 @@
 		83BC65BF155ABEC8005C61AB /* people_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 83BC65BE155ABEC8005C61AB /* people_logo.png */; };
 		83D5571D155AC1FE0061E67D /* bg_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571C155AC1FE0061E67D /* bg_2.png */; };
 		83D5571F155AC6F80061E67D /* bg_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 83D5571E155AC6F80061E67D /* bg_3.png */; };
+		8C113A82157CB978004F95E2 /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 8C113A81157CB978004F95E2 /* Settings.bundle */; };
 		8C18FE0E157A3DA7002CC492 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C18FE0D157A3DA7002CC492 /* AddressBook.framework */; };
 		8C18FE12157A426E002CC492 /* AgendaManagerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C18FE11157A426E002CC492 /* AgendaManagerTests.m */; };
 		8C18FE16157A438A002CC492 /* AgendaManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C18FE15157A438A002CC492 /* AgendaManager.m */; };
@@ -173,6 +174,7 @@
 		83BC65BE155ABEC8005C61AB /* people_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people_logo.png; sourceTree = "<group>"; };
 		83D5571C155AC1FE0061E67D /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_2.png; sourceTree = "<group>"; };
 		83D5571E155AC6F80061E67D /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
+		8C113A81157CB978004F95E2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
 		8C18FE0D157A3DA7002CC492 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8C18FE10157A426E002CC492 /* AgendaManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaManagerTests.h; sourceTree = "<group>"; };
 		8C18FE11157A426E002CC492 /* AgendaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaManagerTests.m; sourceTree = "<group>"; };
@@ -353,6 +355,7 @@
 		83AC14B015597DBC007F96EB = {
 			isa = PBXGroup;
 			children = (
+				8C113A81157CB978004F95E2 /* Settings.bundle */,
 				83AC14C515597DBC007F96EB /* People */,
 				83AC14E315597DBC007F96EB /* PeopleTests */,
 				83AC14BE15597DBC007F96EB /* Frameworks */,
@@ -577,6 +580,7 @@
 				83D5571D155AC1FE0061E67D /* bg_2.png in Resources */,
 				83D5571F155AC6F80061E67D /* bg_3.png in Resources */,
 				D9E8F161157906CC002F8DF9 /* SVProgressHUD.bundle in Resources */,
+				8C113A82157CB978004F95E2 /* Settings.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

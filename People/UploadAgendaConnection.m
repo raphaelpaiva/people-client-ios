@@ -29,7 +29,7 @@
 
 - (NSString *)url
 {
-    return [NSString stringWithFormat:@"http://10.10.10.123:8000/api/upload_agenda/%@", email];
+    return [NSString stringWithFormat:@"%@/api/upload_agenda/%@", [[NSUserDefaults standardUserDefaults] stringForKey:@"url_servidor"], email];
 }
 
 #pragma mark Public
