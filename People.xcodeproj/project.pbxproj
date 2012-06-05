@@ -174,7 +174,7 @@
 		83BC65BE155ABEC8005C61AB /* people_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = people_logo.png; sourceTree = "<group>"; };
 		83D5571C155AC1FE0061E67D /* bg_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_2.png; sourceTree = "<group>"; };
 		83D5571E155AC6F80061E67D /* bg_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_3.png; sourceTree = "<group>"; };
-		8C113A81157CB978004F95E2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = Settings.bundle; sourceTree = "<group>"; };
+		8C113A81157CB978004F95E2 /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = ../Settings.bundle; sourceTree = "<group>"; };
 		8C18FE0D157A3DA7002CC492 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		8C18FE10157A426E002CC492 /* AgendaManagerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AgendaManagerTests.h; sourceTree = "<group>"; };
 		8C18FE11157A426E002CC492 /* AgendaManagerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AgendaManagerTests.m; sourceTree = "<group>"; };
@@ -355,7 +355,6 @@
 		83AC14B015597DBC007F96EB = {
 			isa = PBXGroup;
 			children = (
-				8C113A81157CB978004F95E2 /* Settings.bundle */,
 				83AC14C515597DBC007F96EB /* People */,
 				83AC14E315597DBC007F96EB /* PeopleTests */,
 				83AC14BE15597DBC007F96EB /* Frameworks */,
@@ -406,6 +405,7 @@
 			isa = PBXGroup;
 			children = (
 				83BC65B8155AB970005C61AB /* Images */,
+				8C113A81157CB978004F95E2 /* Settings.bundle */,
 				83AC14C715597DBC007F96EB /* People-Info.plist */,
 				83AC14C815597DBC007F96EB /* InfoPlist.strings */,
 				83AC14CB15597DBC007F96EB /* main.m */,
@@ -749,10 +749,14 @@
 		83AC14EF15597DBD007F96EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Raphael Ruivo (DV2A8EXQGP)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Raphael Ruivo (DV2A8EXQGP)";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "People/People-Prefix.pch";
 				INFOPLIST_FILE = "People/People-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "BFF445E2-A886-43E2-B1C6-39C7027596A9";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "BFF445E2-A886-43E2-B1C6-39C7027596A9";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -760,6 +764,7 @@
 		83AC14F015597DBD007F96EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "People/People-Prefix.pch";
 				INFOPLIST_FILE = "People/People-Info.plist";
